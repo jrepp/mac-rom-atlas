@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { dirname, join, resolve, basename } from "node:path";
+import { dirname, join, resolve, basename, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -2529,7 +2529,11 @@ function atlasMapMtimeKey(root: string) {
   return parts.join("|");
 }
 
-function atlasMapKindToNodeType(kind: string) {
+function atlasMapKindToNodeType(kind: string, file: string, row: Record<string, string>) {
+  if (file === "functions.tsv") return row.id?.startsWith("function:") ? "function" : "function_candidate";
+  if (file === "pointer-tables.tsv") return "pointer_table";
+  if (file === "data-regions.tsv") return "data_region";
+  if (file === "resources.tsv") return row.kind === "resource_asset" ? "resource_asset" : "resource_marker";
   if (kind === "function" || kind === "function_candidate") return kind;
   if (kind === "pointer_table" || kind === "data_region" || kind === "resource_marker" || kind === "resource_asset" || kind === "rom_disassembly") return kind;
   return "atlas_map_region";
@@ -2555,7 +2559,7 @@ function atlasRowNode(dataset: string, file: string, row: Record<string, string>
   }
   return {
     id,
-    type: atlasMapKindToNodeType(kind),
+    type: atlasMapKindToNodeType(kind, file, row),
     address,
     label: row.name || row.id || `${kind} ${address}`,
     metadata,
@@ -2573,7 +2577,7 @@ function atlasMapNodes() {
     for (const dataset of readdirSync(ATLAS_MAPS_DIR).sort()) {
       const dir = join(ATLAS_MAPS_DIR, dataset);
       if (!statSync(dir).isDirectory()) continue;
-      for (const file of ["regions.tsv", "functions.tsv", "pointer-tables.tsv", "resources.tsv", "data-regions.tsv"]) {
+      for (const file of ["functions.tsv", "pointer-tables.tsv", "resources.tsv", "data-regions.tsv"]) {
         for (const row of readTsv(join(dir, file))) {
           const node = atlasRowNode(dataset, file, row);
           if (node) nodes.push(node);
@@ -2590,6 +2594,62 @@ function projectAndAtlasNodes(project: ReverseProject) {
   const existing = new Set(project.nodes.map((node) => `${node.type}:${node.address ?? ""}:${node.label ?? node.name ?? ""}`));
   const overlays = atlasMapNodes().filter((node) => !existing.has(`${node.type}:${node.address ?? ""}:${node.label ?? node.name ?? ""}`));
   return [...project.nodes, ...overlays];
+}
+
+function atlasMapQuery(query: Record<string, unknown>) {
+  const address = typeof query.address === "string" && query.address.trim()
+    ? query.address.replace(/^0x/iu, "").toUpperCase()
+    : "";
+  const q = typeof query.q === "string" ? query.q.trim().toLowerCase() : "";
+  const type = typeof query.type === "string" ? query.type.trim() : "";
+  const dataset = typeof query.dataset === "string" ? query.dataset.trim() : "";
+  const limit = Math.max(1, Math.min(5000, Number(query.limit ?? 500) || 500));
+  const numericAddress = parseHexAddress(address);
+
+  const nodes = atlasMapNodes()
+    .filter((node) => {
+      if (dataset && node.metadata?.dataset !== dataset) return false;
+      if (type && node.type !== type) return false;
+      if (q) {
+        const haystack = [
+          node.id,
+          node.type,
+          node.address,
+          node.label,
+          node.name,
+          node.metadata?.summary,
+          node.metadata?.source,
+          node.metadata?.file
+        ].filter(Boolean).join(" ").toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
+      if (numericAddress !== null) {
+        const start = parseHexAddress(node.address);
+        const end = parseHexAddress(typeof node.metadata?.end_address === "string" ? node.metadata.end_address : undefined) ?? start;
+        if (start === null || end === null || numericAddress < start || numericAddress > end) return false;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      const left = parseHexAddress(a.address) ?? Number.MAX_SAFE_INTEGER;
+      const right = parseHexAddress(b.address) ?? Number.MAX_SAFE_INTEGER;
+      return left - right || a.type.localeCompare(b.type) || a.id.localeCompare(b.id);
+    });
+
+  const datasets = groupCounts(atlasMapNodes().map((node) => String(node.metadata?.dataset ?? "unknown")));
+  const types = groupCounts(atlasMapNodes().map((node) => node.type));
+  const files = groupCounts(atlasMapNodes().map((node) => String(node.metadata?.file ?? "unknown")));
+
+  return {
+    root: relative(ATLAS_ROOT, ATLAS_MAPS_DIR) || ".",
+    filters: { address, q, type, dataset, limit },
+    total: nodes.length,
+    returned: Math.min(nodes.length, limit),
+    datasets,
+    types,
+    files,
+    nodes: nodes.slice(0, limit)
+  };
 }
 
 function projectAddressIndex(project: ReverseProject) {
@@ -3996,6 +4056,16 @@ app.get("/api/projects/:id/disassemblies/:disassemblyId/source-overlay/:address"
     const project = loadProjectStore().projects.find((candidate) => candidate.id === req.params.id);
     if (!project) return res.status(404).json({ error: `Project '${req.params.id}' not found` });
     return res.json(sourceOverlayForAddress(project, req.params.disassemblyId, req.params.address));
+  } catch (error) {
+    return next(error);
+  }
+});
+
+app.get("/api/projects/:id/atlas-maps", (req, res, next) => {
+  try {
+    const project = loadProjectStore().projects.find((candidate) => candidate.id === req.params.id);
+    if (!project) return res.status(404).json({ error: `Project '${req.params.id}' not found` });
+    return res.json(atlasMapQuery(req.query as Record<string, unknown>));
   } catch (error) {
     return next(error);
   }

@@ -52,6 +52,7 @@ Default data locations are repo-internal and stable:
 - `POST /api/projects/:id/import-analysis` imports an analyzed listing into the project graph.
 - `POST /api/projects/:id/roms` imports ROM metadata, memory pages, and optional trap definitions into the graph.
 - `GET /api/projects/:id/memory/:address?length=16` reads bytes from imported ROM memory pages.
+- `GET /api/projects/:id/atlas-maps?address=40800000&type=data_region&q=DRVR` queries clean TSV atlas map overlays.
 - `POST /api/projects/:id/nodes`, `/edges`, and `/notes` let agents persist manual discoveries.
 - `GET /api/projects/:id/types` lists user-defined project types.
 - `POST /api/projects/:id/types` defines or updates a type such as a `struct`, `enum`, `alias`, or `signature`.
