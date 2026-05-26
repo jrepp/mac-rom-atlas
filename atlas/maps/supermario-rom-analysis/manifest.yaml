@@ -1,0 +1,14 @@
+dataset: supermario-rom-analysis
+project_id: supermario-rom-analysis-mplc55nn
+name: "SuperMario ROM Analysis"
+updated_at: 2026-05-26T09:07:03.838Z
+format_version: 1
+files:
+  - roms.tsv
+  - regions.tsv
+  - functions.tsv
+  - pointer-tables.tsv
+  - resources.tsv
+  - data-regions.tsv
+  - xrefs.tsv
+  - notes/

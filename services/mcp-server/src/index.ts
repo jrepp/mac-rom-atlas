@@ -273,6 +273,9 @@ const ROM_ANALYSIS_DIR = process.env.ROM_ANALYSIS_DIR
 const SUPERMARIO_SOURCE_DIR = process.env.SUPERMARIO_SOURCE_DIR
   ? resolve(process.env.SUPERMARIO_SOURCE_DIR)
   : join(ATLAS_ROOT, "data", "sources", "SuperMarioProj.1994-02-09");
+const ATLAS_MAPS_DIR = process.env.ATLAS_MAPS_DIR
+  ? resolve(process.env.ATLAS_MAPS_DIR)
+  : join(ATLAS_ROOT, "atlas", "maps");
 
 function loadKnowledgeBase(): KnowledgeBase {
   try {
@@ -2321,6 +2324,7 @@ interface SourceMatch {
 
 const disassemblyIndexCache = new Map<string, DisassemblyFileIndex>();
 let sourceIndexCache: { root: string; files: SourceFileIndex[] } | null = null;
+let atlasMapCache: { root: string; mtime_key: string; nodes: ProjectNode[] } | null = null;
 
 function disassemblyNodes(project: ReverseProject) {
   return project.nodes
@@ -2499,9 +2503,98 @@ function buildDisassemblyFileIndex(path: string): DisassemblyFileIndex {
   return index;
 }
 
+function readTsv(file: string): Array<Record<string, string>> {
+  if (!existsSync(file) || !statSync(file).isFile()) return [];
+  const lines = readFileSync(file, "utf8").split(/\r?\n/u).filter((line) => line.trim().length > 0);
+  if (lines.length < 2) return [];
+  const headers = lines[0].split("\t");
+  return lines.slice(1).map((line) => {
+    const cells = line.split("\t");
+    return Object.fromEntries(headers.map((header, index) => [header, cells[index] ?? ""]));
+  });
+}
+
+function atlasMapMtimeKey(root: string) {
+  if (!existsSync(root) || !statSync(root).isDirectory()) return "";
+  const parts: string[] = [];
+  for (const dataset of readdirSync(root).sort()) {
+    const dir = join(root, dataset);
+    if (!statSync(dir).isDirectory()) continue;
+    for (const file of readdirSync(dir).filter((name) => name.endsWith(".tsv")).sort()) {
+      const full = join(dir, file);
+      const stats = statSync(full);
+      parts.push(`${dataset}/${file}:${stats.mtimeMs}:${stats.size}`);
+    }
+  }
+  return parts.join("|");
+}
+
+function atlasMapKindToNodeType(kind: string) {
+  if (kind === "function" || kind === "function_candidate") return kind;
+  if (kind === "pointer_table" || kind === "data_region" || kind === "resource_marker" || kind === "resource_asset" || kind === "rom_disassembly") return kind;
+  return "atlas_map_region";
+}
+
+function atlasRowNode(dataset: string, file: string, row: Record<string, string>): ProjectNode | null {
+  const address = (row.start || row.address || "").replace(/^0x/iu, "").toUpperCase();
+  if (!address) return null;
+  const kind = row.kind || file.replace(/\.tsv$/u, "");
+  const id = `atlas:${dataset}:${row.id || `${kind}:${address}`}`;
+  const now = new Date(0).toISOString();
+  const metadata: Record<string, unknown> = {
+    source: "atlas_map",
+    dataset,
+    file,
+    confidence: row.confidence,
+    end_address: row.end,
+    summary: row.summary,
+    original_id: row.id
+  };
+  for (const [key, value] of Object.entries(row)) {
+    if (value && !(key in metadata)) metadata[key] = value;
+  }
+  return {
+    id,
+    type: atlasMapKindToNodeType(kind),
+    address,
+    label: row.name || row.id || `${kind} ${address}`,
+    metadata,
+    created_at: now,
+    updated_at: now
+  };
+}
+
+function atlasMapNodes() {
+  const mtimeKey = atlasMapMtimeKey(ATLAS_MAPS_DIR);
+  if (atlasMapCache?.root === ATLAS_MAPS_DIR && atlasMapCache.mtime_key === mtimeKey) return atlasMapCache.nodes;
+
+  const nodes: ProjectNode[] = [];
+  if (mtimeKey) {
+    for (const dataset of readdirSync(ATLAS_MAPS_DIR).sort()) {
+      const dir = join(ATLAS_MAPS_DIR, dataset);
+      if (!statSync(dir).isDirectory()) continue;
+      for (const file of ["regions.tsv", "functions.tsv", "pointer-tables.tsv", "resources.tsv", "data-regions.tsv"]) {
+        for (const row of readTsv(join(dir, file))) {
+          const node = atlasRowNode(dataset, file, row);
+          if (node) nodes.push(node);
+        }
+      }
+    }
+  }
+
+  atlasMapCache = { root: ATLAS_MAPS_DIR, mtime_key: mtimeKey, nodes };
+  return nodes;
+}
+
+function projectAndAtlasNodes(project: ReverseProject) {
+  const existing = new Set(project.nodes.map((node) => `${node.type}:${node.address ?? ""}:${node.label ?? node.name ?? ""}`));
+  const overlays = atlasMapNodes().filter((node) => !existing.has(`${node.type}:${node.address ?? ""}:${node.label ?? node.name ?? ""}`));
+  return [...project.nodes, ...overlays];
+}
+
 function projectAddressIndex(project: ReverseProject) {
   const nodesByAddress = new Map<string, ProjectNode[]>();
-  for (const node of project.nodes) {
+  for (const node of projectAndAtlasNodes(project)) {
     if (!node.address) continue;
     const address = node.address.toUpperCase();
     const list = nodesByAddress.get(address) ?? [];
@@ -2732,7 +2825,7 @@ function sourceFunctionCandidates(matches: SourceMatch[], limit = 8) {
 function nearbyProjectNodes(project: ReverseProject, address: string, radius = 0x2000) {
   const numeric = parseHexAddress(address);
   if (numeric === null) return [];
-  return project.nodes
+  return projectAndAtlasNodes(project)
     .map((node) => {
       const start = parseHexAddress(node.address);
       const end = parseHexAddress(typeof node.metadata?.end_address === "string" ? node.metadata.end_address : undefined) ?? start;
@@ -2756,7 +2849,7 @@ function sourceOverlayForAddress(project: ReverseProject, disassemblyId: string,
   const disassembly = readDisassembly(project, disassemblyId, { address, limit: 80 });
   const activeLines = disassembly.lines.filter((line) => line.address === address || line.target === address);
   const selectedLine = activeLines.find((line) => line.address === address) ?? activeLines[0];
-  const nodes = project.nodes.filter((node) => node.address === address);
+  const nodes = projectAndAtlasNodes(project).filter((node) => node.address === address);
   const selectedFunction = index.functionByAddress.get(address);
   const inbound = index.xrefsTo.get(address) ?? [];
   const outbound = index.xrefsFrom.get(address) ?? [];
@@ -3741,6 +3834,7 @@ const apiRoutes = {
   projectDisassemblyIndex: "GET /api/projects/:id/disassemblies/:disassemblyId/index",
   projectDisassemblyXrefs: "GET /api/projects/:id/disassemblies/:disassemblyId/xrefs/:address",
   projectDisassemblySourceOverlay: "GET /api/projects/:id/disassemblies/:disassemblyId/source-overlay/:address",
+  projectAtlasMaps: "GET /api/projects/:id/atlas-maps?address=",
   projectEvents: "GET /api/projects/:id/events",
   projectMemoryRead: "GET /api/projects/:id/memory/:address?length=16",
   sections: "GET /api/sections",

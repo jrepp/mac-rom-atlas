@@ -1,0 +1,848 @@
+id	address	end	name	calls	jumps	references	confidence	source
+function:40800074:early-rom-startup	40800074		Early ROM startup / supervisor setup				medium	agent_note
+function:40800314:trap-address-probe	40800314		Trap address probe/setup				medium	agent_note
+function:40800320:startup-helper-dispatch	40800320		Startup helper dispatch				low	agent_note
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408027B0	408027B0		fn408027B0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408027B0	408027B0		fn408027B0	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40802A10	40802A10		fn40802A10	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4080D7A4	4080D7A4		fn4080D7A4	18	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4080F130	4080F130		fn4080F130	17	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4080F130	4080F130		fn4080F130	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40811396	40811396		fn40811396	7	1	10	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40813EFC	40813EFC		fn40813EFC	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40813EFC	40813EFC		fn40813EFC	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40814030	40814030		label40814030	0	14	14	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40815ACA	40815ACA		fn40815ACA	19	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40815ACA	40815ACA		fn40815ACA	19	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408172F8	408172F8		fn408172F8	9	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408172F8	408172F8		fn408172F8	9	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40818D36	40818D36		fn40818D36	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40819290	40819290		fn40819290	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40819290	40819290		fn40819290	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408192A6	408192A6		fn408192A6	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408192A6	408192A6		fn408192A6	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408194FE	408194FE		fn408194FE	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4081A47A	4081A47A		fn4081A47A	7	0	7	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081A5D2	4081A5D2		fn4081A5D2	11	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081AF32	4081AF32		fn4081AF32	12	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081AF58	4081AF58		fn4081AF58	9	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081F3DC	4081F3DC		fn4081F3DC	23	1	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081FA6C	4081FA6C		fn4081FA6C	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081FC04	4081FC04		fn4081FC04	20	0	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081FC36	4081FC36		fn4081FC36	20	0	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081FC68	4081FC68		fn4081FC68	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4081FC86	4081FC86		fn4081FC86	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822558	40822558		Function candidate 40822558	0	34	34	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822940	40822940		fn40822940	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408229DA	408229DA		fn408229DA	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822A16	40822A16		fn40822A16	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822B9C	40822B9C		fn40822B9C	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822BC8	40822BC8		fn40822BC8	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40822C0C	40822C0C		fn40822C0C	33	0	33	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40824638	40824638		fn40824638	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40824B94	40824B94		fn40824B94	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40825CD0	40825CD0		fn40825CD0	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40826520	40826520		fn40826520	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40826584	40826584		fn40826584	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408265B6	408265B6		fn408265B6	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40826710	40826710		fn40826710	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40826870	40826870		fn40826870	17	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40827888	40827888		fn40827888	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40827A54	40827A54		fn40827A54	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40827B96	40827B96		fn40827B96	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40827C40	40827C40		fn40827C40	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828278	40828278		fn40828278	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828302	40828302		fn40828302	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408283C6	408283C6		fn408283C6	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082855A	4082855A		fn4082855A	10	1	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828644	40828644		fn40828644	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828886	40828886		fn40828886	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082889C	4082889C		fn4082889C	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828D48	40828D48		fn40828D48	44	0	44	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40828DFC	40828DFC		Function candidate 40828DFC	0	50	52	0.8	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40829F2A	40829F2A		fn40829F2A	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40829F40	40829F40		fn40829F40	9	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082A366	4082A366		fn4082A366	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082A9AC	4082A9AC		fn4082A9AC	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082B3E2	4082B3E2		fn4082B3E2	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082B91E	4082B91E		fn4082B91E	33	0	33	0.85	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082C39A	4082C39A		fn4082C39A	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082C3E0	4082C3E0		fn4082C3E0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082C412	4082C412		fn4082C412	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082CDAE	4082CDAE		fn4082CDAE	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082CE00	4082CE00		fn4082CE00	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082CE0A	4082CE0A		fn4082CE0A	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082D3B4	4082D3B4		fn4082D3B4	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082D40A	4082D40A		fn4082D40A	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4082FF70	4082FF70		fn4082FF70	23	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40830220	40830220		fn40830220	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408302C0	408302C0		fn408302C0	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408303B0	408303B0		fn408303B0	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40831CE6	40831CE6		fn40831CE6	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408323C0	408323C0		fn408323C0	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40832412	40832412		fn40832412	32	0	32	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083251C	4083251C		fn4083251C	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408325BE	408325BE		fn408325BE	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40833070	40833070		fn40833070	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40833560	40833560		fn40833560	35	0	35	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40833F9E	40833F9E		fn40833F9E	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40834064	40834064		fn40834064	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40834154	40834154		fn40834154	86	0	86	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40834570	40834570		fn40834570	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408345B6	408345B6		fn408345B6	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40834DC4	40834DC4		fn40834DC4	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408350FA	408350FA		fn408350FA	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40835920	40835920		fn40835920	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40835D24	40835D24		fn40835D24	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408383D4	408383D4		fn408383D4	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083A3EA	4083A3EA		fn4083A3EA	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083C63A	4083C63A		fn4083C63A	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083C6DE	4083C6DE		fn4083C6DE	21	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083CDA4	4083CDA4		fn4083CDA4	10	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083D488	4083D488		fn4083D488	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083DA3E	4083DA3E		fn4083DA3E	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083E26E	4083E26E		fn4083E26E	20	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083E646	4083E646		fn4083E646	11	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4083E646	4083E646		fn4083E646	11	2			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083EF0A	4083EF0A		fn4083EF0A	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083EF2E	4083EF2E		fn4083EF2E	17	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4083FB3E	4083FB3E		fn4083FB3E	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408400A0	408400A0		fn408400A0	32	0	32	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408400EE	408400EE		fn408400EE	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40840114	40840114		fn40840114	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40840506	40840506		fn40840506	19	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408410A0	408410A0		fn408410A0	19	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408410A0	408410A0		fn408410A0	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408419E0	408419E0		fn408419E0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40841AD0	40841AD0		fn40841AD0	17	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40841AD0	40841AD0		fn40841AD0	17	2	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40843F8C	40843F8C		fn40843F8C	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408441D0	408441D0		fn408441D0	22	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408441D0	408441D0		fn408441D0	22	0	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40844220	40844220		fn40844220	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40844220	40844220		fn40844220	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408451C0	408451C0		fn408451C0	23	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408451C0	408451C0		fn408451C0	23	0	23	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408457D0	408457D0		fn408457D0	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408457D0	408457D0		fn408457D0	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408457F0	408457F0		fn408457F0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40847F1E	40847F1E		fn40847F1E	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40848012	40848012		fn40848012	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408480A4	408480A4		fn408480A4	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084834A	4084834A		fn4084834A	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40848430	40848430		fn40848430	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40848818	40848818		fn40848818	9	0	9	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084AC82	4084AC82		fn4084AC82	7	0	7	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084AC96	4084AC96		fn4084AC96	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084AC96	4084AC96		fn4084AC96	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084AF0C	4084AF0C		fn4084AF0C	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084AF9A	4084AF9A		fn4084AF9A	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084B45C	4084B45C		fn4084B45C	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084B45C	4084B45C		fn4084B45C	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084C4F4	4084C4F4		fn4084C4F4	11	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084C4F4	4084C4F4		fn4084C4F4	11	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084C976	4084C976		fn4084C976	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084C976	4084C976		fn4084C976	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084C98A	4084C98A		fn4084C98A	19	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084C98A	4084C98A		fn4084C98A	19	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084C9A8	4084C9A8		fn4084C9A8	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084C9A8	4084C9A8		fn4084C9A8	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084CE52	4084CE52		fn4084CE52	12	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084CE52	4084CE52		fn4084CE52	12	1	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084CE78	4084CE78		fn4084CE78	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084CE78	4084CE78		fn4084CE78	9	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084EBAC	4084EBAC		fn4084EBAC	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084EBAC	4084EBAC		fn4084EBAC	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4084FAD0	4084FAD0		fn4084FAD0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4084FAD0	4084FAD0		fn4084FAD0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408500F8	408500F8		fn408500F8	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408500F8	408500F8		fn408500F8	9	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40850380	40850380		fn40850380	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408509D0	408509D0		fn408509D0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40850CA0	40850CA0		fn40850CA0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408517B0	408517B0		fn408517B0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408517B0	408517B0		fn408517B0	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40851FB6	40851FB6		Function candidate 40851FB6	0	45	45	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40852020	40852020		fn40852020	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40852020	40852020		fn40852020	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40852084	40852084		fn40852084	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408520B6	408520B6		fn408520B6	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408520B6	408520B6		fn408520B6	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40852242	40852242		fn40852242	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40852242	40852242		fn40852242	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408523A0	408523A0		fn408523A0	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408523A0	408523A0		fn408523A0	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40852584	40852584		fn40852584	7	0	7	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40853010	40853010		fn40853010	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40853010	40853010		fn40853010	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408533E8	408533E8		fn408533E8	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408533E8	408533E8		fn408533E8	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408535B4	408535B4		fn408535B4	19	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408535B4	408535B4		fn408535B4	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408536F6	408536F6		fn408536F6	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408537A0	408537A0		fn408537A0	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408537A0	408537A0		fn408537A0	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40853DD8	40853DD8		fn40853DD8	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40853E62	40853E62		fn40853E62	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40853E62	40853E62		fn40853E62	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40853F36	40853F36		fn40853F36	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40853F36	40853F36		fn40853F36	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40854388	40854388		fn40854388	45	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40854388	40854388		fn40854388	45	0	45	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40854452	40854452		Function candidate 40854452	0	51			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40854452	40854452		Function candidate 40854452	0	51	53	0.8	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408555A8	408555A8		fn408555A8	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408555A8	408555A8		fn408555A8	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408555BE	408555BE		fn408555BE	10	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408555BE	408555BE		fn408555BE	10	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40855BF8	40855BF8		fn40855BF8	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40855BF8	40855BF8		fn40855BF8	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40856262	40856262		fn40856262	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40856262	40856262		fn40856262	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085626A	4085626A		fn4085626A	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085626A	4085626A		fn4085626A	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085690E	4085690E		fn4085690E	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40856CA0	40856CA0		fn40856CA0	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40856CA0	40856CA0		fn40856CA0	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408571DC	408571DC		fn408571DC	36	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408571DC	408571DC		fn408571DC	36	0	36	0.85	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085736C	4085736C		fn4085736C	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408574DA	408574DA		fn408574DA	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408574F6	408574F6		fn408574F6	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40857C6C	40857C6C		fn40857C6C	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40857C6C	40857C6C		fn40857C6C	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40857CB2	40857CB2		fn40857CB2	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40857CB2	40857CB2		fn40857CB2	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40857CE4	40857CE4		fn40857CE4	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40857CE4	40857CE4		fn40857CE4	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085874E	4085874E		fn4085874E	20	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085874E	4085874E		fn4085874E	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408587A0	408587A0		fn408587A0	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408587A0	408587A0		fn408587A0	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408587AA	408587AA		fn408587AA	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408587AA	408587AA		fn408587AA	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40858D54	40858D54		fn40858D54	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40858D54	40858D54		fn40858D54	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40858DAA	40858DAA		fn40858DAA	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40858DAA	40858DAA		fn40858DAA	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085ABFE	4085ABFE		fn4085ABFE	25	2	27	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085AFF0	4085AFF0		fn4085AFF0	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085BAA0	4085BAA0		fn4085BAA0	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085BB20	4085BB20		fn4085BB20	23	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085BB20	4085BB20		fn4085BB20	23	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085BDD0	4085BDD0		fn4085BDD0	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085BDD0	4085BDD0		fn4085BDD0	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085BE70	4085BE70		fn4085BE70	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085BE70	4085BE70		fn4085BE70	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085BF60	4085BF60		fn4085BF60	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085BF60	4085BF60		fn4085BF60	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085D010	4085D010		fn4085D010	11	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085D010	4085D010		fn4085D010	11	2	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085D398	4085D398		fn4085D398	18	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085D3E8	4085D3E8		fn4085D3E8	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085D43C	4085D43C		fn4085D43C	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085DAE2	4085DAE2		fn4085DAE2	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085DAE2	4085DAE2		fn4085DAE2	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085DAF6	4085DAF6		fn4085DAF6	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085DAF6	4085DAF6		fn4085DAF6	9	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085DE36	4085DE36		fn4085DE36	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085E25A	4085E25A		fn4085E25A	19	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085E25A	4085E25A		fn4085E25A	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085E2C0	4085E2C0		fn4085E2C0	32	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085E2C0	4085E2C0		fn4085E2C0	32	0	32	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085E3DE	4085E3DE		fn4085E3DE	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085E3DE	4085E3DE		fn4085E3DE	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085E4AC	4085E4AC		fn4085E4AC	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085E4AC	4085E4AC		fn4085E4AC	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085F0D0	4085F0D0		fn4085F0D0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4085F6A0	4085F6A0		fn4085F6A0	36	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4085F6A0	4085F6A0		fn4085F6A0	36	0	36	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40860142	40860142		fn40860142	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40860142	40860142		fn40860142	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086019A	4086019A		fn4086019A	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086021C	4086021C		fn4086021C	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086021C	4086021C		fn4086021C	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086034A	4086034A		fn4086034A	86	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086034A	4086034A		fn4086034A	86	0	86	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086082E	4086082E		fn4086082E	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086082E	4086082E		fn4086082E	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408611C6	408611C6		fn408611C6	9	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408611C6	408611C6		fn408611C6	9	0	9	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40861578	40861578		fn40861578	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40861578	40861578		fn40861578	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40861E9E	40861E9E		fn40861E9E	20	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40861E9E	40861E9E		fn40861E9E	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086239E	4086239E		fn4086239E	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086239E	4086239E		fn4086239E	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40863D2A	40863D2A		fn40863D2A	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40863D54	40863D54		fn40863D54	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40863E60	40863E60		fn40863E60	13	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40864F60	40864F60		fn40864F60	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086703A	4086703A		fn4086703A	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086703A	4086703A		fn4086703A	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40868442	40868442		Function candidate 40868442	0	60	60	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40868EB6	40868EB6		Function candidate 40868EB6	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408692E0	408692E0		fn408692E0	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408692E0	408692E0		fn408692E0	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40869384	40869384		fn40869384	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40869384	40869384		fn40869384	21	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40869A4A	40869A4A		fn40869A4A	10	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40869A4A	40869A4A		fn40869A4A	10	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086A12E	4086A12E		fn4086A12E	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086A12E	4086A12E		fn4086A12E	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086A6E4	4086A6E4		fn4086A6E4	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086A6E4	4086A6E4		fn4086A6E4	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086AF14	4086AF14		fn4086AF14	20	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086AF14	4086AF14		fn4086AF14	20	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086BBAE	4086BBAE		fn4086BBAE	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086BBAE	4086BBAE		fn4086BBAE	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086BBD2	4086BBD2		fn4086BBD2	17	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086BBD2	4086BBD2		fn4086BBD2	17	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086C7E0	4086C7E0		fn4086C7E0	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086C7E0	4086C7E0		fn4086C7E0	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086CD44	4086CD44		fn4086CD44	32	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086CD44	4086CD44		fn4086CD44	32	0	32	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086CD92	4086CD92		fn4086CD92	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086CD92	4086CD92		fn4086CD92	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086CDB8	4086CDB8		fn4086CDB8	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086CDB8	4086CDB8		fn4086CDB8	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086D1AA	4086D1AA		fn4086D1AA	19	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086D1AA	4086D1AA		fn4086D1AA	19	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086DD50	4086DD50		fn4086DD50	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086DD60	4086DD60		fn4086DD60	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086EC54	4086EC54		Function candidate 4086EC54	0	45	45	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086EF60	4086EF60		fn4086EF60	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086EF60	4086EF60		fn4086EF60	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4086EFB0	4086EFB0		fn4086EFB0	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4086EFB0	4086EFB0		fn4086EFB0	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408716C0	408716C0		fn408716C0	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40872B80	40872B80		fn40872B80	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087307A	4087307A		fn4087307A	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087307A	4087307A		fn4087307A	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408773E6	408773E6		fn408773E6	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408773F0	408773F0		fn408773F0	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408773FA	408773FA		fn408773FA	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40877BFE	40877BFE		fn40877BFE	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40877BFE	40877BFE		fn40877BFE	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878ED2	40878ED2		fn40878ED2	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878EF0	40878EF0		fn40878EF0	26	0	26	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878F10	40878F10		fn40878F10	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878F4E	40878F4E		fn40878F4E	22	1	23	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878F76	40878F76		fn40878F76	20	2	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878FC2	40878FC2		fn40878FC2	17	1	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40878FE0	40878FE0		fn40878FE0	15	1	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40879040	40879040		fn40879040	22	2	24	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087A490	4087A490		fn4087A490	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087C01E	4087C01E		fn4087C01E	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087C01E	4087C01E		fn4087C01E	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087C132	4087C132		fn4087C132	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087C132	4087C132		fn4087C132	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087C1D8	4087C1D8		fn4087C1D8	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087C50A	4087C50A		fn4087C50A	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087C610	4087C610		fn4087C610	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087CAD0	4087CAD0		fn4087CAD0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087D0DC	4087D0DC		fn4087D0DC	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087E688	4087E688		Function candidate 4087E688	0	37	37	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4087EC30	4087EC30		fn4087EC30	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4087EC30	4087EC30		fn4087EC30	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408826B0	408826B0		fn408826B0	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40882700	40882700		fn40882700	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40882810	40882810		fn40882810	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40882950	40882950		fn40882950	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40882950	40882950		fn40882950	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40882BD0	40882BD0		fn40882BD0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40882BD0	40882BD0		fn40882BD0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40882F60	40882F60		fn40882F60	25	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40882F60	40882F60		fn40882F60	25	0	25	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40883690	40883690		fn40883690	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40883EE0	40883EE0		fn40883EE0	25	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40883EE0	40883EE0		fn40883EE0	25	0	25	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408849E0	408849E0		fn408849E0	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408849E0	408849E0		fn408849E0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40886EF0	40886EF0		fn40886EF0	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40886EF0	40886EF0		fn40886EF0	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40886F40	40886F40		fn40886F40	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40886F40	40886F40		fn40886F40	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408870B0	408870B0		fn408870B0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40887100	40887100		fn40887100	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40887100	40887100		fn40887100	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40887BF0	40887BF0		fn40887BF0	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40887BF0	40887BF0		fn40887BF0	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408883F0	408883F0		fn408883F0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408883F0	408883F0		fn408883F0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408884C0	408884C0		fn408884C0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408884C0	408884C0		fn408884C0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40888AE0	40888AE0		fn40888AE0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088BBA4	4088BBA4		Function candidate 4088BBA4	0	29			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4088BBA4	4088BBA4		Function candidate 4088BBA4	0	29	29	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088BD38	4088BD38		fn4088BD38	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4088C0A0	4088C0A0		fn4088C0A0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088C914	4088C914		fn4088C914	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088CA72	4088CA72		fn4088CA72	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088CAA0	4088CAA0		fn4088CAA0	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4088D870	4088D870		fn4088D870	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40890A2E	40890A2E		fn40890A2E	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40890E2C	40890E2C		fn40890E2C	7	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40894504	40894504		fn40894504	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40895490	40895490		fn40895490	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089568E	4089568E		fn4089568E	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089568E	4089568E		fn4089568E	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40896142	40896142		fn40896142	28	1	29	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089619E	4089619E		fn4089619E	10	1	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089623E	4089623E		fn4089623E	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40896500	40896500		fn40896500	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40896BA0	40896BA0		fn40896BA0	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40896BA0	40896BA0		fn40896BA0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897620	40897620		fn40897620	25	0	25	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897640	40897640		fn40897640	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897704	40897704		fn40897704	8	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897C40	40897C40		fn40897C40	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897E32	40897E32		fn40897E32	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40897FB0	40897FB0		fn40897FB0	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40898AC0	40898AC0		fn40898AC0	7	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40899010	40899010		fn40899010	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40899010	40899010		fn40899010	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089A4A0	4089A4A0		fn4089A4A0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089A4A0	4089A4A0		fn4089A4A0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089C570	4089C570		fn4089C570	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089C570	4089C570		fn4089C570	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089C5B0	4089C5B0		fn4089C5B0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089C5B0	4089C5B0		fn4089C5B0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089E14A	4089E14A		Function candidate 4089E14A	0	30			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089E2C0	4089E2C0		fn4089E2C0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089E350	4089E350		fn4089E350	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089E350	4089E350		fn4089E350	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4089E3E0	4089E3E0		fn4089E3E0	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4089E3E0	4089E3E0		fn4089E3E0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A00FA	408A00FA		fn408A00FA	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A03B0	408A03B0		fn408A03B0	9	0	9	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A0400	408A0400		fn408A0400	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A1C3A	408A1C3A		fn408A1C3A	30	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A2F8C	408A2F8C		fn408A2F8C	13	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A2F8C	408A2F8C		fn408A2F8C	13	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A30FA	408A30FA		fn408A30FA	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A30FA	408A30FA		fn408A30FA	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A3116	408A3116		fn408A3116	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A3116	408A3116		fn408A3116	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A5E84	408A5E84		fn408A5E84	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A6DEE	408A6DEE		fn408A6DEE	26	3			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A6DEE	408A6DEE		fn408A6DEE	26	3	29	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A7330	408A7330		fn408A7330	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A7330	408A7330		fn408A7330	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A7442	408A7442		Function candidate 408A7442	0	65	65	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A74BC	408A74BC		fn408A74BC	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408A7DE0	408A7DE0		fn408A7DE0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408A7DE0	408A7DE0		fn408A7DE0	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408ACEE0	408ACEE0		fn408ACEE0	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408AD280	408AD280		fn408AD280	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408AD280	408AD280		fn408AD280	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408AD760	408AD760		fn408AD760	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408AD760	408AD760		fn408AD760	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408AD7A0	408AD7A0		fn408AD7A0	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408AD7A0	408AD7A0		fn408AD7A0	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408ADB60	408ADB60		fn408ADB60	17	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408ADB60	408ADB60		fn408ADB60	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408ADF60	408ADF60		fn408ADF60	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408B0490	408B0490		fn408B0490	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408B0490	408B0490		fn408B0490	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408B0EF0	408B0EF0		fn408B0EF0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408B0EF0	408B0EF0		fn408B0EF0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408B3C70	408B3C70		fn408B3C70	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408B3C70	408B3C70		fn408B3C70	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408B57D0	408B57D0		fn408B57D0	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408B57D0	408B57D0		fn408B57D0	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BA800	408BA800		fn408BA800	50	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BA800	408BA800		fn408BA800	50	0	50	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BAB60	408BAB60		fn408BAB60	28	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BAB60	408BAB60		fn408BAB60	28	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BBA2E	408BBA2E		fn408BBA2E	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BBC08	408BBC08		fn408BBC08	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BCA22	408BCA22		Function candidate 408BCA22	0	52	52	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BD598	408BD598		Function candidate 408BD598	0	42			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BD598	408BD598		Function candidate 408BD598	0	42	42	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BD9E2	408BD9E2		Function candidate 408BD9E2	0	40			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BD9E2	408BD9E2		Function candidate 408BD9E2	0	40	40	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BDA26	408BDA26		Function candidate 408BDA26	0	36			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BDA26	408BDA26		Function candidate 408BDA26	0	36	36	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BEB80	408BEB80		fn408BEB80	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BEB80	408BEB80		fn408BEB80	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BEE80	408BEE80		fn408BEE80	29	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BEE80	408BEE80		fn408BEE80	29	0	29	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408BFF00	408BFF00		fn408BFF00	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408BFF00	408BFF00		fn408BFF00	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C0300	408C0300		fn408C0300	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C0300	408C0300		fn408C0300	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C2450	408C2450		fn408C2450	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C2450	408C2450		fn408C2450	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C2460	408C2460		fn408C2460	23	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C2460	408C2460		fn408C2460	23	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C2A58	408C2A58		fn408C2A58	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C2A58	408C2A58		fn408C2A58	18	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C2AA8	408C2AA8		fn408C2AA8	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C2AA8	408C2AA8		fn408C2AA8	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C2AFC	408C2AFC		fn408C2AFC	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C2AFC	408C2AFC		fn408C2AFC	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C34F6	408C34F6		fn408C34F6	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C34F6	408C34F6		fn408C34F6	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C5AD0	408C5AD0		fn408C5AD0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C5AD0	408C5AD0		fn408C5AD0	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C971A	408C971A		fn408C971A	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C971A	408C971A		fn408C971A	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C9744	408C9744		fn408C9744	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C9744	408C9744		fn408C9744	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408C9850	408C9850		fn408C9850	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408C9850	408C9850		fn408C9850	13	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408CDE32	408CDE32		Function candidate 408CDE32	0	60			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408CDE32	408CDE32		Function candidate 408CDE32	0	60	60	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408CE8A6	408CE8A6		Function candidate 408CE8A6	0	28			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408CE8A6	408CE8A6		Function candidate 408CE8A6	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408D31F0	408D31F0		fn408D31F0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408D31F0	408D31F0		fn408D31F0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408D40C8	408D40C8		Function candidate 408D40C8	0	45			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408D40C8	408D40C8		Function candidate 408D40C8	0	45	45	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DBF96	408DBF96		fn408DBF96	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DBF96	408DBF96		fn408DBF96	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DBFA0	408DBFA0		fn408DBFA0	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DBFA0	408DBFA0		fn408DBFA0	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DBFAA	408DBFAA		fn408DBFAA	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DBFAA	408DBFAA		fn408DBFAA	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DD982	408DD982		fn408DD982	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DD982	408DD982		fn408DD982	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DD9A0	408DD9A0		fn408DD9A0	24	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DD9A0	408DD9A0		fn408DD9A0	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DD9C0	408DD9C0		fn408DD9C0	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DD9C0	408DD9C0		fn408DD9C0	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DD9FE	408DD9FE		fn408DD9FE	22	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DD9FE	408DD9FE		fn408DD9FE	22	1	23	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DDA26	408DDA26		fn408DDA26	20	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DDA26	408DDA26		fn408DDA26	20	2	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DDA72	408DDA72		fn408DDA72	17	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DDA72	408DDA72		fn408DDA72	17	1	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DDA90	408DDA90		fn408DDA90	15	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DDA90	408DDA90		fn408DDA90	15	1	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408DDAF0	408DDAF0		fn408DDAF0	22	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408DDAF0	408DDAF0		fn408DDAF0	22	2	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408E1BBA	408E1BBA		fn408E1BBA	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408E1BBA	408E1BBA		fn408E1BBA	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408E312C	408E312C		Function candidate 408E312C	0	37			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408E312C	408E312C		Function candidate 408E312C	0	37	37	0.7	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F0970	408F0970		fn408F0970	7	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F0AE0	408F0AE0		fn408F0AE0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408F45BC	408F45BC		fn408F45BC	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F45BC	408F45BC		fn408F45BC	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408F5338	408F5338		fn408F5338	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F5338	408F5338		fn408F5338	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F54EA	408F54EA		fn408F54EA	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408F5534	408F5534		fn408F5534	24	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F5534	408F5534		fn408F5534	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408F64B0	408F64B0		fn408F64B0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FDBC8	408FDBC8		fn408FDBC8	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FDBC8	408FDBC8		fn408FDBC8	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FEC60	408FEC60		fn408FEC60	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FEC60	408FEC60		fn408FEC60	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FEEE0	408FEEE0		fn408FEEE0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FEEE0	408FEEE0		fn408FEEE0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FF9B2	408FF9B2		fn408FF9B2	28	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FF9B2	408FF9B2		fn408FF9B2	28	1	29	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FFA0E	408FFA0E		fn408FFA0E	10	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FFA0E	408FFA0E		fn408FFA0E	10	1	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:408FFACC	408FFACC		fn408FFACC	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:408FFACC	408FFACC		fn408FFACC	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40900FF0	40900FF0		fn40900FF0	25	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40900FF0	40900FF0		fn40900FF0	25	0	25	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40901020	40901020		fn40901020	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40901020	40901020		fn40901020	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090111C	4090111C		fn4090111C	8	0	9	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40901732	40901732		fn40901732	8	0	8	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40901976	40901976		fn40901976	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40901B20	40901B20		fn40901B20	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40901B20	40901B20		fn40901B20	16	0	16	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4090803A	4090803A		Function candidate 4090803A	0	30			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090803A	4090803A		Function candidate 4090803A	0	30	30	0.7	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40908FA2	40908FA2		fn40908FA2	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4090A396	4090A396		fn4090A396	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090A396	4090A396		fn4090A396	14	0	14	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4090C2AA	4090C2AA		fn4090C2AA	30	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090C2AA	4090C2AA		fn4090C2AA	30	0	30	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4090F37C	4090F37C		Function candidate 4090F37C	0	29			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090F37C	4090F37C		Function candidate 4090F37C	0	29	29	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4090FC94	4090FC94		fn4090FC94	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4090FC94	4090FC94		fn4090FC94	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092233A	4092233A		fn4092233A	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092376A	4092376A		fn4092376A	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40923B8A	40923B8A		fn40923B8A	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40927246	40927246		fn40927246	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40928EB6	40928EB6		fn40928EB6	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092951E	4092951E		fn4092951E	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4092951E	4092951E		fn4092951E	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409296F8	409296F8		fn409296F8	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409296F8	409296F8		fn409296F8	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409297F6	409297F6		fn409297F6	25	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092A512	4092A512		Function candidate 4092A512	0	52			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4092A512	4092A512		Function candidate 4092A512	0	52	52	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092B3B6	4092B3B6		fn4092B3B6	33	0	33	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092CA96	4092CA96		fn4092CA96	19	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092DCBE	4092DCBE		fn4092DCBE	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092DFE2	4092DFE2		fn4092DFE2	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092E910	4092E910		fn4092E910	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4092FEE8	4092FEE8		fn4092FEE8	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40930B48	40930B48		fn40930B48	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409325DE	409325DE		fn409325DE	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409329A4	409329A4		fn409329A4	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40933506	40933506		fn40933506	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40933916	40933916		Function candidate 40933916	0	32			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40935542	40935542		fn40935542	36	3	39	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40935622	40935622		fn40935622	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093684C	4093684C		fn4093684C	10	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40937B70	40937B70		fn40937B70	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40939098	40939098		Function candidate 40939098	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40939230	40939230		fn40939230	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093A830	4093A830		fn4093A830	8	1	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093C630	4093C630		fn4093C630	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093C650	4093C650		fn4093C650	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093C680	4093C680		fn4093C680	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4093E120	4093E120		fn4093E120	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40941120	40941120		fn40941120	44	0	44	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409415D0	409415D0		fn409415D0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40941650	40941650		fn40941650	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409421F0	409421F0		fn409421F0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409447A0	409447A0		fn409447A0	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40944900	40944900		fn40944900	30	0	30	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40944920	40944920		fn40944920	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409449E0	409449E0		fn409449E0	43	0	43	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40944A20	40944A20		fn40944A20	218	0	218	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40947D80	40947D80		fn40947D80	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40947DE0	40947DE0		fn40947DE0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40947E30	40947E30		fn40947E30	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40948AA0	40948AA0		fn40948AA0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40949C00	40949C00		fn40949C00	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40949C30	40949C30		fn40949C30	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094A2C0	4094A2C0		fn4094A2C0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094C760	4094C760		fn4094C760	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094C820	4094C820		fn4094C820	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094C8C0	4094C8C0		fn4094C8C0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094CEE0	4094CEE0		fn4094CEE0	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094E4B0	4094E4B0		fn4094E4B0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4094FF90	4094FF90		fn4094FF90	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40950F10	40950F10		fn40950F10	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40952070	40952070		fn40952070	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40955240	40955240		fn40955240	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40955260	40955260		fn40955260	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409576D0	409576D0		fn409576D0	22	0	22	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40958260	40958260		fn40958260	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409584B0	409584B0		fn409584B0	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40958530	40958530		fn40958530	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409589C0	409589C0		fn409589C0	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40958A00	40958A00		fn40958A00	19	0	19	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40958A30	40958A30		fn40958A30	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409593D0	409593D0		fn409593D0	29	0	29	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095DBD0	4095DBD0		fn4095DBD0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095DBE2	4095DBE2		fn4095DBE2	23	0	23	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095DBE6	4095DBE6		fn4095DBE6	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095DBF8	4095DBF8		fn4095DBF8	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095E2E0	4095E2E0		fn4095E2E0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4095F0F8	4095F0F8		Function candidate 4095F0F8	0	45	45	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40961246	40961246		fn40961246	9	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40961790	40961790		fn40961790	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40961B50	40961B50		fn40961B50	102	0	102	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40962030	40962030		fn40962030	11	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409620F6	409620F6		fn409620F6	35	2	37	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40962112	40962112		fn40962112	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40962154	40962154		fn40962154	21	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409643F2	409643F2		fn409643F2	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4096B5F0	4096B5F0		fn4096B5F0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4096C160	4096C160		fn4096C160	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4096D240	4096D240		fn4096D240	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4096E5AA	4096E5AA		fn4096E5AA	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4096E5AA	4096E5AA		fn4096E5AA	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40970376	40970376		fn40970376	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40970376	40970376		fn40970376	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40970CF6	40970CF6		fn40970CF6	25	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40970CF6	40970CF6		fn40970CF6	25	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097276E	4097276E		fn4097276E	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409727C0	409727C0		fn409727C0	16	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409727C0	409727C0		fn409727C0	16	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409736A8	409736A8		Function candidate 409736A8	0	33	33	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40973D98	40973D98		fn40973D98	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40973D98	40973D98		fn40973D98	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409749F8	409749F8		fn409749F8	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409749F8	409749F8		fn409749F8	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409758E2	409758E2		fn409758E2	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097591E	4097591E		fn4097591E	12	3			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097648E	4097648E		fn4097648E	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097648E	4097648E		fn4097648E	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40976854	40976854		fn40976854	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40976854	40976854		fn40976854	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409773B6	409773B6		fn409773B6	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409773B6	409773B6		fn409773B6	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409773DC	409773DC		fn409773DC	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409777C6	409777C6		Function candidate 409777C6	0	32			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409777C6	409777C6		Function candidate 409777C6	0	32	32	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409793F2	409793F2		fn409793F2	36	3			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409793F2	409793F2		fn409793F2	36	3	39	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409794D2	409794D2		fn409794D2	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409794D2	409794D2		fn409794D2	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097A6FA	4097A6FA		fn4097A6FA	10	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097A6FA	4097A6FA		fn4097A6FA	10	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097A7AA	4097A7AA		fn4097A7AA	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097A808	4097A808		fn4097A808	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097A8E4	4097A8E4		fn4097A8E4	35	0	35	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097A938	4097A938		fn4097A938	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097BB10	4097BB10		fn4097BB10	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097BB10	4097BB10		fn4097BB10	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097D1F8	4097D1F8		Function candidate 4097D1F8	0	28			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097D1F8	4097D1F8		Function candidate 4097D1F8	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4097D3C0	4097D3C0		fn4097D3C0	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097D3C0	4097D3C0		fn4097D3C0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4097EB60	4097EB60		fn4097EB60	8	1	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40980AF0	40980AF0		fn40980AF0	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40980AF0	40980AF0		fn40980AF0	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40980B10	40980B10		fn40980B10	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40980B10	40980B10		fn40980B10	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40980B30	40980B30		fn40980B30	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40980B40	40980B40		fn40980B40	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40980B40	40980B40		fn40980B40	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409820E2	409820E2		fn409820E2	22	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409826E0	409826E0		fn409826E0	9	0	9	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40982750	40982750		fn40982750	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409827C0	409827C0		fn409827C0	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409827C0	409827C0		fn409827C0	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409834E0	409834E0		fn409834E0	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409834E0	409834E0		fn409834E0	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40984072	40984072		fn40984072	22	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40984730	40984730		fn40984730	24	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40984730	40984730		fn40984730	24	0	24	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40984770	40984770		fn40984770	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40984770	40984770		fn40984770	21	0	21	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40984E50	40984E50		fn40984E50	9	0	9	0.95	stackimport
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40986E00	40986E00		fn40986E00	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40986E12	40986E12		fn40986E12	23	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40986E12	40986E12		fn40986E12	23	0	23	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40986E16	40986E16		fn40986E16	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40986E28	40986E28		fn40986E28	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40986E28	40986E28		fn40986E28	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40987570	40987570		fn40987570	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098840C	4098840C		Function candidate 4098840C	0	42			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098840C	4098840C		Function candidate 4098840C	0	42	42	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098A7B4	4098A7B4		fn4098A7B4	9	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098A7B4	4098A7B4		fn4098A7B4	9	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098C87A	4098C87A		fn4098C87A	17	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098C87A	4098C87A		fn4098C87A	17	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098C8C2	4098C8C2		fn4098C8C2	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098C8C2	4098C8C2		fn4098C8C2	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098D304	4098D304		fn4098D304	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098D304	4098D304		fn4098D304	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098DBE6	4098DBE6		fn4098DBE6	11	1			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098DBE6	4098DBE6		fn4098DBE6	11	1			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098DCAC	4098DCAC		fn4098DCAC	35	2			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098DCAC	4098DCAC		fn4098DCAC	35	2	37	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098DCC8	4098DCC8		fn4098DCC8	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098DCC8	4098DCC8		fn4098DCC8	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098DD0E	4098DD0E		fn4098DD0E	21	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098DD0E	4098DD0E		fn4098DD0E	21	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4098EEC2	4098EEC2		fn4098EEC2	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4098EEC2	4098EEC2		fn4098EEC2	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40990DF8	40990DF8		fn40990DF8	142	0	142	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40990E2E	40990E2E		fn40990E2E	20	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40990F30	40990F30		fn40990F30	17	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40990FC6	40990FC6		fn40990FC6	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40991074	40991074		fn40991074	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40995034	40995034		fn40995034	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:40995034	40995034		fn40995034	13	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099504A	4099504A		fn4099504A	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4099504A	4099504A		fn4099504A	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409964D0	409964D0		fn409964D0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409972F0	409972F0		fn409972F0	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40997330	40997330		fn40997330	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:40997370	40997370		fn40997370	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099ACFC	4099ACFC		fn4099ACFC	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4099ACFC	4099ACFC		fn4099ACFC	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099AD66	4099AD66		fn4099AD66	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4099AD66	4099AD66		fn4099AD66	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099C848	4099C848		fn4099C848	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4099C848	4099C848		fn4099C848	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:4099C8C0	4099C8C0		fn4099C8C0	8	0	8	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099CF8E	4099CF8E		Function candidate 4099CF8E	0	35	35	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099F47C	4099F47C		Function candidate 4099F47C	0	29			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:4099FF10	4099FF10		fn4099FF10	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A4816	409A4816		Function candidate 409A4816	0	29			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A504A	409A504A		Function candidate 409A504A	0	40	40	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A5548	409A5548		Function candidate 409A5548	0	53			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409A5548	409A5548		Function candidate 409A5548	0	53	53	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A5C92	409A5C92		Function candidate 409A5C92	0	95	95	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A7796	409A7796		Function candidate 409A7796	0	52			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409A7796	409A7796		Function candidate 409A7796	0	52	52	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409A8DE2	409A8DE2		Function candidate 409A8DE2	0	59			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409A8DE2	409A8DE2		Function candidate 409A8DE2	0	59	59	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409AA7A0	409AA7A0		fn409AA7A0	62	0	62	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409AA9C0	409AA9C0		fn409AA9C0	23	0	23	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409AAAF0	409AAAF0		fn409AAAF0	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409ABDC0	409ABDC0		fn409ABDC0	25	0	25	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409AF8BC	409AF8BC		fn409AF8BC	12	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409AF8BC	409AF8BC		fn409AF8BC	12	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B01FA	409B01FA		fn409B01FA	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B030A	409B030A		fn409B030A	17	0	17	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B0494	409B0494		fn409B0494	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B162A	409B162A		fn409B162A	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B179E	409B179E		fn409B179E	11	0	11	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B17AE	409B17AE		fn409B17AE	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B1F50	409B1F50		fn409B1F50	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B1F50	409B1F50		fn409B1F50	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B2030	409B2030		fn409B2030	9	0	9	0.95	stackimport
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B2070	409B2070		fn409B2070	13	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B2070	409B2070		fn409B2070	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B3124	409B3124		fn409B3124	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B312C	409B312C		fn409B312C	28	0	28	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B408E	409B408E		Function candidate 409B408E	0	35			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B408E	409B408E		Function candidate 409B408E	0	35	35	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B45EC	409B45EC		Function candidate 409B45EC	0	29			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B45EC	409B45EC		Function candidate 409B45EC	0	29	29	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B64F8	409B64F8		Function candidate 409B64F8	0	30			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409B64F8	409B64F8		Function candidate 409B64F8	0	30	30	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B6C30	409B6C30		fn409B6C30	12	0	12	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B85C0	409B85C0		fn409B85C0	15	0	15	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409B8640	409B8640		fn409B8640	13	0	13	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409BA120	409BA120		fn409BA120	10	0	10	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409BBED4	409BBED4		Function candidate 409BBED4	0	51	51	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E306E	409E306E		fn409E306E	20	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409E306E	409E306E		fn409E306E	20	0	20	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E30BE	409E30BE		fn409E30BE	36	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409E30BE	409E30BE		fn409E30BE	36	0	36	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E5016	409E5016		Function candidate 409E5016	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E65F6	409E65F6		fn409E65F6	101	0	101	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E660A	409E660A		fn409E660A	90	0	90	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E6616	409E6616		fn409E6616	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E6654	409E6654		fn409E6654	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E9B24	409E9B24		fn409E9B24	18	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409E9B24	409E9B24		fn409E9B24	18	0	18	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409E9B60	409E9B60		fn409E9B60	67	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409E9B60	409E9B60		fn409E9B60	67	0	67	0.95	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409EB430	409EB430		fn409EB430	14	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409EB430	409EB430		fn409EB430	14	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F1708	409F1708		Function candidate 409F1708	0	28			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F1708	409F1708		Function candidate 409F1708	0	28			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F2CF0	409F2CF0		fn409F2CF0	101	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F2CF0	409F2CF0		fn409F2CF0	101	0	101	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F2D04	409F2D04		fn409F2D04	90	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F2D04	409F2D04		fn409F2D04	90	0	90	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F2D10	409F2D10		fn409F2D10	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F2D10	409F2D10		fn409F2D10	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F2D4E	409F2D4E		fn409F2D4E	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F2D4E	409F2D4E		fn409F2D4E	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F643E	409F643E		fn409F643E	123	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F643E	409F643E		fn409F643E	123	0	123	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F6452	409F6452		fn409F6452	92	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F6452	409F6452		fn409F6452	92	0	92	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F645E	409F645E		fn409F645E	31	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F645E	409F645E		fn409F645E	31	0	31	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409F8FEC	409F8FEC		fn409F8FEC	10	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409F8FEC	409F8FEC		fn409F8FEC	10	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FCC70	409FCC70		fn409FCC70	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409FCC70	409FCC70		fn409FCC70	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FCCB0	409FCCB0		fn409FCCB0	11	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409FCCB0	409FCCB0		fn409FCCB0	11	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FCD08	409FCD08		fn409FCD08	15	0			rom_structure_analysis
+function_candidate:rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152:409FCD08	409FCD08		fn409FCD08	15	0			rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FEE7C	409FEE7C		fn409FEE7C	123	0	123	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FEE90	409FEE90		fn409FEE90	92	0	92	0.7	rom_structure_analysis
+function_candidate:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:409FEE9C	409FEE9C		fn409FEE9C	31	0			rom_structure_analysis
