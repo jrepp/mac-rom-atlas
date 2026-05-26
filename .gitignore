@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.cache/
+
+# Local runtime state
+.env
+.env.*
+*.log
+
+# Large generated or source binary artifacts
+*.rom
+*.ROM
+*.bin
+*.img
+*.dsk
+*.iso
+
+# Generated analysis can be added intentionally once storage policy is defined.
+out/
+tmp/
