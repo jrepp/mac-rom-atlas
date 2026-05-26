@@ -142,6 +142,31 @@ function validateNoLocalPaths() {
   }
 }
 
+function validateNoTrackedLargeArtifacts() {
+  const forbidden = [
+    /\.rom$/iu,
+    /\.bin$/iu,
+    /\.img$/iu,
+    /\.dsk$/iu,
+    /\.iso$/iu,
+    /\.pdf$/iu,
+    /(^|\/)memory-pages\//u,
+    /^data\/reference-pdfs\//u,
+    /^data\/book-extractions\//u,
+    /^data\/roms\/(?!README\.md$)/u,
+    /^data\/disassembly\/(?!README\.md$)/u,
+    /^data\/sources\/(?!README\.md$)/u
+  ];
+  const files = execFileSync("git", ["ls-files"], { cwd: repoRoot, encoding: "utf8" })
+    .split(/\r?\n/u)
+    .filter(Boolean);
+  for (const file of files) {
+    if (forbidden.some((pattern) => pattern.test(file))) {
+      fail(`${file} is a raw or generated artifact that should not be tracked`);
+    }
+  }
+}
+
 function parseTsv(file) {
   const text = fs.readFileSync(file, "utf8");
   const lines = text.split(/\r?\n/u);
@@ -232,6 +257,7 @@ function validateGeneratedMapsCurrent() {
 parseJsonFiles();
 validateProjectStores();
 validateNoLocalPaths();
+validateNoTrackedLargeArtifacts();
 validateAtlasMaps();
 validateDashboardScript();
 validateGeneratedMapsCurrent();

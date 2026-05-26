@@ -1,0 +1,20 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  project-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: services/mcp-server/package-lock.json
+      - run: npm ci --prefix services/mcp-server
+      - run: npm run validate

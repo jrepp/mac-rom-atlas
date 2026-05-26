@@ -37,8 +37,24 @@ User-facing workflows for:
 - Use repo-relative atlas paths in project metadata, not machine-local absolute paths.
 - Do not commit raw ROM bytes, source PDFs, or full memory-page dumps to the public repo without an explicit storage policy.
 
+## Publication Format
+
+Public, diffable atlas data lives under `atlas/maps/<dataset>/`:
+
+- `manifest.yaml` identifies the dataset and generated files.
+- `roms.tsv` lists ROM identities, stable paths, hashes, and base addresses.
+- `regions.tsv` is a broad map of code, table, data, resource, and disassembly regions.
+- `functions.tsv`, `pointer-tables.tsv`, `data-regions.tsv`, `resources.tsv`, `labels.tsv`, `strings.tsv`, `traps.tsv`, and `xrefs.tsv` provide workflow-specific indexes.
+- `notes/*.md` stores analyst-authored context with YAML front matter.
+
+The MCP server treats these files as overlay indexes. Project JSON remains the working database; atlas maps are the public interchange surface.
+
 ## Service Principles
 
 - Expose project data through MCP and REST APIs.
 - Keep frontend workflows query-driven rather than loading whole ROM-scale state into the browser.
 - Make every annotation traceable to its source: stackimport, source overlay, manual knowledge, structure analysis, or analyst note.
+
+## Validation Flow
+
+`npm run validate` is the shared local and CI gate. It validates JSON parsing, project graph consistency, atlas TSV schemas, generated map freshness, local-path leaks, tracked raw artifacts, dashboard JavaScript syntax, and the MCP TypeScript build.

@@ -26,6 +26,22 @@ The goal is to make the ROM research workspace navigable as one project rather t
 
 Large ROM images, generated disassembly listings, and extracted binary assets should not be committed directly until the storage policy is explicit.
 
+## Quick Start
+
+```sh
+npm ci --prefix services/mcp-server
+npm run prepare:hooks
+npm run validate
+```
+
+Run the dashboard and REST API:
+
+```sh
+npm --prefix services/mcp-server run start:rest
+```
+
+Then open `http://localhost:3000`.
+
 ## Current Source Projects
 
 Current stable internal locations:
@@ -43,3 +59,13 @@ Current stable internal locations:
 ## Status
 
 This repository now contains the MCP service, frontend, transformed 68k documentation, trap data, and split project metadata. Raw ROM files, source PDFs, generated book output, memory-page byte dumps, and full disassembly listings remain local/ignored until a public storage policy is explicit.
+
+## Validation
+
+The repo has a committed pre-commit hook in `.githooks/pre-commit`. Enable it once per checkout with:
+
+```sh
+npm run prepare:hooks
+```
+
+`npm run validate` checks project JSON, atlas TSV schemas, generated map freshness, frontend script syntax, tracked-artifact policy, and the MCP TypeScript build. GitHub Actions runs the same validation on pushes and pull requests.

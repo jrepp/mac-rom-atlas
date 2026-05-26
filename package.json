@@ -5,7 +5,8 @@
   "scripts": {
     "export:maps": "node tools/export_atlas_maps.js",
     "validate:data": "node scripts/validate_project_data.js",
-    "validate": "npm run validate:data && npm --prefix services/mcp-server run build",
+    "validate:service": "npm --prefix services/mcp-server run build",
+    "validate": "npm run validate:data && npm run validate:service",
     "prepare:hooks": "git config core.hooksPath .githooks"
   }
 }
