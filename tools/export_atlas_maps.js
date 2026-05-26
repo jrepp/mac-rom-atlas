@@ -34,6 +34,20 @@ function writeTsv(file, columns, rows) {
   fs.writeFileSync(path.join(outDir, file), `${lines.join("\n")}\n`);
 }
 
+function listFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const files = [];
+  for (const entry of fs.readdirSync(dir).sort()) {
+    const full = path.join(dir, entry);
+    if (fs.statSync(full).isDirectory()) {
+      files.push(...listFiles(full));
+    } else {
+      files.push(full);
+    }
+  }
+  return files;
+}
+
 function hexNumber(address) {
   if (!address) return Number.POSITIVE_INFINITY;
   const parsed = Number.parseInt(String(address).replace(/^0x/i, ""), 16);
@@ -245,10 +259,9 @@ fs.writeFileSync(path.join(outDir, "manifest.yaml"), `${manifest}\n`);
 
 if (checkMode) {
   const failures = [];
-  for (const file of fs.readdirSync(outDir).sort()) {
-    const generated = path.join(outDir, file);
+  for (const generated of listFiles(outDir)) {
+    const file = path.relative(outDir, generated);
     const published = path.join(publicOutDir, file);
-    if (fs.statSync(generated).isDirectory()) continue;
     if (!fs.existsSync(published)) {
       failures.push(`${file} is missing from ${path.relative(repoRoot, publicOutDir)}`);
       continue;
@@ -256,6 +269,10 @@ if (checkMode) {
     if (fs.readFileSync(generated, "utf8") !== fs.readFileSync(published, "utf8")) {
       failures.push(`${file} is stale; run node tools/export_atlas_maps.js`);
     }
+  }
+  for (const published of listFiles(publicOutDir)) {
+    const file = path.relative(publicOutDir, published);
+    if (!fs.existsSync(path.join(outDir, file))) failures.push(`${file} is no longer generated`);
   }
   fs.rmSync(outDir, { recursive: true, force: true });
   if (failures.length > 0) {

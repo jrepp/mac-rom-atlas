@@ -45,6 +45,79 @@ function parseJsonFiles() {
   }
 }
 
+function readJson(file, fallback) {
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function validateUniqueIds(rows, file) {
+  const seen = new Set();
+  for (const row of rows) {
+    if (!row || typeof row !== "object" || typeof row.id !== "string" || !row.id.trim()) {
+      fail(`${rel(file)} contains an item without a non-empty id`);
+      continue;
+    }
+    if (seen.has(row.id)) fail(`${rel(file)} has duplicate id '${row.id}'`);
+    seen.add(row.id);
+  }
+}
+
+function validateProjectStores() {
+  const root = path.join(repoRoot, "services", "mcp-server", "data", "projects");
+  if (!fs.existsSync(root)) return;
+  for (const projectId of fs.readdirSync(root).sort()) {
+    const dir = path.join(root, projectId);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    const projectFile = path.join(dir, "project.json");
+    const nodesFile = path.join(dir, "nodes.json");
+    const edgesFile = path.join(dir, "edges.json");
+    const notesFile = path.join(dir, "notes.json");
+    const typesFile = path.join(dir, "types.json");
+    for (const file of [projectFile, nodesFile, edgesFile, notesFile, typesFile]) {
+      if (!fs.existsSync(file)) fail(`${rel(file)} is missing`);
+    }
+
+    const project = readJson(projectFile, {});
+    const nodes = readJson(nodesFile, []);
+    const edges = readJson(edgesFile, []);
+    const notes = readJson(notesFile, []);
+    const types = readJson(typesFile, []);
+    if (project.id !== projectId) fail(`${rel(projectFile)} id '${project.id}' does not match directory '${projectId}'`);
+    for (const [label, rows, file] of [
+      ["nodes", nodes, nodesFile],
+      ["edges", edges, edgesFile],
+      ["notes", notes, notesFile],
+      ["types", types, typesFile]
+    ]) {
+      if (!Array.isArray(rows)) {
+        fail(`${rel(file)} must contain a JSON array of ${label}`);
+        continue;
+      }
+      validateUniqueIds(rows, file);
+    }
+
+    const nodeIds = new Set(Array.isArray(nodes) ? nodes.map((node) => node.id) : []);
+    const typeIds = new Set(Array.isArray(types) ? types.map((type) => type.id) : []);
+    for (const node of Array.isArray(nodes) ? nodes : []) {
+      if (typeof node.type !== "string" || !node.type.trim()) fail(`${rel(nodesFile)} node '${node.id}' is missing type`);
+      if (node.address && !validAddress(String(node.address))) fail(`${rel(nodesFile)} node '${node.id}' has non-normalized address '${node.address}'`);
+    }
+    for (const edge of Array.isArray(edges) ? edges : []) {
+      for (const endpoint of ["from", "to"]) {
+        const id = edge[endpoint];
+        if (typeof id !== "string" || !id.trim()) {
+          fail(`${rel(edgesFile)} edge '${edge.id}' is missing ${endpoint}`);
+        } else if (!nodeIds.has(id) && !typeIds.has(id) && !id.startsWith("memory_page:")) {
+          fail(`${rel(edgesFile)} edge '${edge.id}' references missing ${endpoint} '${id}'`);
+        }
+      }
+    }
+  }
+}
+
 function validateNoLocalPaths() {
   const files = execFileSync("git", ["ls-files"], { cwd: repoRoot, encoding: "utf8" })
     .split(/\r?\n/u)
@@ -157,6 +230,7 @@ function validateGeneratedMapsCurrent() {
 }
 
 parseJsonFiles();
+validateProjectStores();
 validateNoLocalPaths();
 validateAtlasMaps();
 validateDashboardScript();
