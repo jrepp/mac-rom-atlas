@@ -1,0 +1,7 @@
+{
+  "id": "supermario-rom-analysis-mplc55nn",
+  "name": "SuperMario ROM Analysis",
+  "description": "Reverse engineering project for Old World 2MB ROM matching SuperMarioProj.1994-02-09 sources. The SuperMario project is dated 1994-02-09 and sources correspond to one of the later 2MB ROMs (Quadra 660AV/840AV or PowerBook 520/540/550c or PowerBook 190/190cs) before the New World transition.",
+  "created_at": "2026-05-25T15:02:34.211Z",
+  "updated_at": "2026-05-26T09:07:03.838Z"
+}

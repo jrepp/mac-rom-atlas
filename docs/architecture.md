@@ -34,6 +34,8 @@ User-facing workflows for:
 - Avoid write amplification by splitting large project state into addressable files.
 - Store generated overlays in a way that can be rebuilt from ROMs, disassembly, source, and notes.
 - Treat function boundaries, code/data splits, and source overlays as hypotheses unless confirmed by control flow and references.
+- Use repo-relative atlas paths in project metadata, not machine-local absolute paths.
+- Do not commit raw ROM bytes, source PDFs, or full memory-page dumps to the public repo without an explicit storage policy.
 
 ## Service Principles
 

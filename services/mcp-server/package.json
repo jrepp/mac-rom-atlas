@@ -1,0 +1,27 @@
+{
+  "name": "m68k-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP server for M68000 assembly instruction knowledge base",
+  "scripts": {
+    "parse": "python3 scripts/parse_knowledge_base.py",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:rest": "MCP_STDIO=false node dist/index.js",
+    "start:mcp": "REST_API=false node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "dev:rest": "MCP_STDIO=false tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}

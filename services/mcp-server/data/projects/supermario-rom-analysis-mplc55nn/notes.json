@@ -1,0 +1,57 @@
+[
+  {
+    "id": "note:mplhdsj5",
+    "title": "Project orientation",
+    "text": "# SuperMario ROM reverse engineering orientation\n\nThis project is tracking Old World Macintosh ROMs against the leaked/archived SuperMario source tree dated `1994-02-09`.\n\n## Current workspace state\n\n- Four ROM images are imported into the graph, including three 2MB candidates and the 1MB Quadra 900/Basilisk image.\n- The Quadra 660AV/840AV ROM has a stackimport disassembly artifact with real 68K mnemonics and trap annotations.\n- The graph currently emphasizes imported ROM pages, checksums, machine-family nodes, and one ROM disassembly node.\n\n## Main question\n\nWhich 2MB ROM most closely corresponds to the SuperMario source snapshot? The candidates are:\n\n1. PowerBook 520/540/550c ROM, 1994-05, CRC token `B6909089`\n2. Quadra 660AV/840AV ROM, 1994-09, CRC token `5BF10FD1`\n3. PowerBook 190/190cs ROM, 1995-08, CRC token `4D27039C`\n\n## Working approach\n\nUse several signals rather than one match type: source string overlap, ROM date proximity, model-specific resources, trap/call patterns, and eventually binary/object identity against compiled SuperMario components.",
+    "tags": [
+      "overview",
+      "orientation",
+      "rom"
+    ],
+    "kind": "markdown",
+    "created_at": "2026-05-25T17:29:15.185Z",
+    "updated_at": "2026-05-25T17:29:15.185Z"
+  },
+  {
+    "id": "note:mplhdsk0",
+    "title": "Candidate ROM evidence",
+    "text": "# Candidate ROM evidence\n\nA source-like string overlap pass was run against the three 2MB ROM candidates, excluding obvious binary/object artifacts where possible.\n\n## String-overlap result\n\n| Candidate | Hits | Weighted score |\n| --- | ---: | ---: |\n| PowerBook 190/190cs 1995-08 | 121 | 1844 |\n| Quadra 660AV/840AV 1994-09 | 91 | 1416 |\n| PowerBook 520/540 1994-05 | 68 | 1150 |\n\n## Interpretation\n\nThe PowerBook 190 ROM currently has the strongest string overlap, but this is not proof. Shared DeclData resources, later common Toolbox strings, and source tree components that postdate the original SuperMario snapshot can skew the result.\n\n## Next checks\n\n- Compare only high-specificity strings from OS, ProcessMgr, Toolbox, and model-specific DeclData.\n- Find strings that appear in exactly one candidate ROM.\n- Disassemble all three 2MB ROMs with the same base address convention and compare trap/call neighborhoods around shared strings.\n- Look for exact byte sequences from known compiled source/object artifacts only after filtering generated metadata.",
+    "tags": [
+      "finding",
+      "matching",
+      "strings"
+    ],
+    "kind": "markdown",
+    "created_at": "2026-05-25T17:29:15.216Z",
+    "updated_at": "2026-05-25T17:29:15.216Z"
+  },
+  {
+    "id": "note:mplhdsli",
+    "title": "Disassembly navigation notes",
+    "text": "# Disassembly navigation notes\n\nThe current disassembly artifact for the Quadra 660AV/840AV ROM is stored as a `rom_disassembly` node and can be browsed from the Disassembly tab.\n\n## Useful starting points\n\n- `40800000`: ROM image start/header area. The first word sequence includes the CRC token bytes, so early linear decode includes data before code stabilizes.\n- `40800074`: early startup/control setup region reached by initial jump table entries.\n- `40800318`: trap dispatch setup neighborhood with `GetTrapAddress` and `SetTrapAddress` calls.\n\n## Browser behavior\n\nThe disassembly view now annotates rows with:\n\n- current containing label/function when visible or inferred from the preceding label,\n- branch/call target links from disassembler comments,\n- trap links for A-line trap words,\n- memory-reference links for likely absolute addresses,\n- graph annotation chips for any imported nodes at the same address.\n\n## Caution\n\nThis is still a linear ROM disassembly. Data islands and tables will decode as plausible instructions in places. Treat function boundaries as hypotheses until confirmed by control flow and references.",
+    "target": "rom_disassembly:rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152:6973886C",
+    "tags": [
+      "disassembly",
+      "navigation",
+      "trap"
+    ],
+    "kind": "markdown",
+    "created_at": "2026-05-25T17:29:15.270Z",
+    "updated_at": "2026-05-25T17:29:15.270Z"
+  },
+  {
+    "id": "note:mpli3l2o",
+    "title": "ROM structure pass: Quadra 660AV/840AV",
+    "text": "# ROM structure pass: Quadra 660AV/840AV\n\nThe selected 2 MB ROM is now classified as a mixed code/data image instead of only a linear instruction stream. The current pass uses stackimport output plus server-side control-flow/reference heuristics, so every function boundary remains a hypothesis until confirmed by control flow, references, and nearby data islands.\n\n## Current counts\n\n| Class | Count | Notes |\n|---|---:|---|\n| Function candidates | 295 | 250 from the server structure pass plus stackimport sample candidates; ranked by inbound calls/references. |\n| Pointer tables | 27 | Virtual addresses are based at `40800000`; the earliest detected table starts at `40803280`. |\n| Data regions | 120 | Stackimport string/data clusters imported from the ROM scan. |\n| Resource markers | 143 | Includes `DRVR`, `CODE`, `PACK`, `STR#`, `MENU`, `ALRT`, `DITL`, `cfrg`, and related markers. |\n\n## Landmarks\n\n- `40944A20` is the strongest current function candidate, with 218 inbound call references. Treat this as an important shared helper or dispatch target until callers are grouped.\n- `40834154` is another high-confidence call target, with 86 inbound calls around the `40833xxx` region.\n- `40803280` is the first pointer table candidate. Its entries point back into ROM space, starting with `408055D0`, `4083985A`, and `40839AB6`.\n- `40800BFC`, `4080122A`, `4080CE64`, and `4080CF78` are early `DRVR` resource marker hits.\n\n## Cautions\n\nThis is still a linear ROM disassembly with overlays. Tables, strings, and packed resource data can decode as plausible 68K instructions. Use the Structure tab to jump between candidate functions, pointer tables, data clusters, and resource markers, then confirm boundaries by following branch/call references and checking memory bytes near each target.",
+    "target": "rom:1994-09---5--10--1----uadra-660av---840a:6973886C:2097152",
+    "tags": [
+      "overview",
+      "finding",
+      "structure",
+      "disassembly"
+    ],
+    "kind": "markdown",
+    "created_at": "2026-05-25T17:49:18.576Z",
+    "updated_at": "2026-05-25T19:02:29.326Z"
+  }
+]

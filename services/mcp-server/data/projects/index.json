@@ -1,0 +1,100 @@
+{
+  "format": "split-project-store-v1",
+  "updated_at": "2026-05-26T09:07:03.904Z",
+  "projects": [
+    {
+      "id": "supermario-rom-analysis-mplc55nn",
+      "name": "SuperMario ROM Analysis",
+      "description": "Reverse engineering project for Old World 2MB ROM matching SuperMarioProj.1994-02-09 sources. The SuperMario project is dated 1994-02-09 and sources correspond to one of the later 2MB ROMs (Quadra 660AV/840AV or PowerBook 520/540/550c or PowerBook 190/190cs) before the New World transition.",
+      "created_at": "2026-05-25T15:02:34.211Z",
+      "updated_at": "2026-05-26T09:07:03.838Z",
+      "counts": {
+        "nodes": 3202,
+        "edges": 3193,
+        "notes": 4,
+        "types": 0
+      },
+      "node_types": [
+        {
+          "value": "memory_page",
+          "count": 1792
+        },
+        {
+          "value": "function_candidate",
+          "count": 844
+        },
+        {
+          "value": "resource_marker",
+          "count": 275
+        },
+        {
+          "value": "data_region",
+          "count": 240
+        },
+        {
+          "value": "pointer_table",
+          "count": 28
+        },
+        {
+          "value": "checksum",
+          "count": 8
+        },
+        {
+          "value": "rom",
+          "count": 4
+        },
+        {
+          "value": "rom_header",
+          "count": 4
+        },
+        {
+          "value": "function",
+          "count": 3
+        },
+        {
+          "value": "machine_family",
+          "count": 2
+        },
+        {
+          "value": "rom_disassembly",
+          "count": 2
+        }
+      ],
+      "edge_types": [
+        {
+          "value": "contains_page",
+          "count": 1792
+        },
+        {
+          "value": "contains_function_candidate",
+          "count": 844
+        },
+        {
+          "value": "contains_resource_marker",
+          "count": 275
+        },
+        {
+          "value": "contains_data_region",
+          "count": 240
+        },
+        {
+          "value": "contains_pointer_table",
+          "count": 28
+        },
+        {
+          "value": "has_checksum",
+          "count": 8
+        },
+        {
+          "value": "has_family",
+          "count": 4
+        },
+        {
+          "value": "has_disassembly",
+          "count": 2
+        }
+      ],
+      "type_kinds": []
+    }
+  ]
+}

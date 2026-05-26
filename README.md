@@ -28,13 +28,18 @@ Large ROM images, generated disassembly listings, and extracted binary assets sh
 
 ## Current Source Projects
 
-Known upstream working areas:
+Current stable internal locations:
 
-- `../pdf-book2md/mcp-server` - current MCP/REST server and reverse-engineering dashboard
-- `../stackimport` - ROM disassembly and resource extraction tooling
-- `../supermario/base/SuperMarioProj.1994-02-09` - SuperMario source tree used for overlays
-- `~/Downloads/Old_World_Mac_Roms/` - local ROM source material
+- `services/mcp-server` - MCP/REST server and reverse-engineering dashboard
+- `services/mcp-server/public` - frontend workspace
+- `services/mcp-server/data/knowledge_base.json` - transformed M68000 documentation
+- `services/mcp-server/data/traps.json` - Toolbox/OS trap database
+- `services/mcp-server/data/projects/` - persistent project analysis data
+- `tools/stackimport` - intended location for ROM disassembly and resource extraction tooling
+- `data/sources/SuperMarioProj.1994-02-09` - intended local location for SuperMario source overlays
+- `data/roms/` - intended local location for ROM inputs
+- `data/disassembly/` - intended local location for generated disassembly artifacts
 
 ## Status
 
-This repository starts as the consolidation target. The first implementation milestone is to migrate or link the current MCP server, dashboard, stackimport outputs, ROM project metadata, and book-derived knowledge into a coherent workspace.
+This repository now contains the MCP service, frontend, transformed 68k documentation, trap data, and split project metadata. Raw ROM files, source PDFs, generated book output, memory-page byte dumps, and full disassembly listings remain local/ignored until a public storage policy is explicit.

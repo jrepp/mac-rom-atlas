@@ -1,0 +1,1821 @@
+{
+  "metadata": {
+    "source": "Apple Macintosh Toolbox / Operating System Reference",
+    "version": "1.0",
+    "total_traps": 180,
+    "categories": ["toolbox", "os", "设备", "资源"]
+  },
+  "traps": [
+    {
+      "name": "_Open",
+      "selector": "A000",
+      "trap_word": "A000",
+      "manager": "File Manager",
+      "description": "Opens a file.",
+      "routine": "Open",
+      "parameters": [
+        { "name": "fileName", "type": "StringPtr", "description": "Pointer to filename" },
+        { "name": "vRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Close",
+      "selector": "A001",
+      "trap_word": "A001",
+      "manager": "File Manager",
+      "description": "Closes a file.",
+      "routine": "Close",
+      "parameters": [
+        { "name": "refNum", "type": "Integer", "description": "File reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Read",
+      "selector": "A002",
+      "trap_word": "A002",
+      "manager": "File Manager",
+      "description": "Reads data from a file.",
+      "routine": "Read",
+      "parameters": [
+        { "name": "refNum", "type": "Integer", "description": "File reference number" },
+        { "name": "count", "type": "LongInt", "description": "Number of bytes to read" },
+        { "name": "buffPtr", "type": "Ptr", "description": "Buffer to receive data" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Write",
+      "selector": "A003",
+      "trap_word": "A003",
+      "manager": "File Manager",
+      "description": "Writes data to a file.",
+      "routine": "Write",
+      "parameters": [
+        { "name": "refNum", "type": "Integer", "description": "File reference number" },
+        { "name": "count", "type": "LongInt", "description": "Number of bytes to write" },
+        { "name": "buffPtr", "type": "Ptr", "description": "Buffer containing data" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FSRead",
+      "selector": "2000",
+      "trap_word": "A004",
+      "manager": "File Manager",
+      "description": "Reads from a file using FSRfStyle",
+      "routine": "FSRead",
+      "parameters": [
+        { "name": "refNum", "type": "Integer", "description": "File reference number" },
+        { "name": "count", "type": "LongInt", "description": "Number of bytes to read" },
+        { "name": "buffPtr", "type": "Ptr", "description": "Buffer to receive data" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System 7"
+    },
+    {
+      "name": "_FSWrite",
+      "selector": "2001",
+      "trap_word": "A005",
+      "manager": "File Manager",
+      "description": "Writes to a file using FSRfStyle",
+      "routine": "FSWrite",
+      "parameters": [
+        { "name": "refNum", "type": "Integer", "description": "File reference number" },
+        { "name": "count", "type": "LongInt", "description": "Number of bytes to write" },
+        { "name": "buffPtr", "type": "Ptr", "description": "Buffer containing data" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System 7"
+    },
+    {
+      "name": "_PBGetFInfo",
+      "selector": "C000",
+      "trap_word": "A006",
+      "manager": "File Manager",
+      "description": "Gets file information.",
+      "routine": "GetFInfo",
+      "parameters": [
+        { "name": "ioNamePtr", "type": "StringPtr", "description": "Pointer to filename" },
+        { "name": "ioVRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PBSetFInfo",
+      "selector": "C001",
+      "trap_word": "A007",
+      "manager": "File Manager",
+      "description": "Sets file information.",
+      "routine": "SetFInfo",
+      "parameters": [
+        { "name": "ioNamePtr", "type": "StringPtr", "description": "Pointer to filename" },
+        { "name": "ioVRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetVol",
+      "selector": "C700",
+      "trap_word": "A008",
+      "manager": "File Manager",
+      "description": "Gets the default volume.",
+      "routine": "GetVol",
+      "parameters": [
+        { "name": "volName", "type": "StringPtr", "description": "Volume name buffer" },
+        { "name": "vRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetVol",
+      "selector": "C701",
+      "trap_word": "A009",
+      "manager": "File Manager",
+      "description": "Sets the default volume.",
+      "routine": "SetVol",
+      "parameters": [
+        { "name": "volName", "type": "StringPtr", "description": "Volume name" },
+        { "name": "vRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FlushVol",
+      "selector": "C702",
+      "trap_word": "A00A",
+      "manager": "File Manager",
+      "description": "Flushs the volume.",
+      "routine": "FlushVol",
+      "parameters": [
+        { "name": "volName", "type": "StringPtr", "description": "Volume name" },
+        { "name": "vRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_NewHandle",
+      "selector": "A01F",
+      "trap_word": "A01F",
+      "manager": "Memory Manager",
+      "description": "Allocates a new handle.",
+      "routine": "NewHandle",
+      "parameters": [
+        { "name": "size", "type": "Size", "description": "Number of bytes to allocate" }
+      ],
+      "returns": { "type": "Handle", "description": "Handle to new memory" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Dispose",
+      "selector": "A01D",
+      "trap_word": "A01D",
+      "manager": "Memory Manager",
+      "description": "Disposes of a handle or pointer.",
+      "routine": "Dispose",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Handle to dispose" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_HandleLock",
+      "selector": "A02D",
+      "trap_word": "A02D",
+      "manager": "Memory Manager",
+      "description": "Locks a handle.",
+      "routine": "LockHandle",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Handle to lock" }
+      ],
+      "returns": { "type": "Ptr", "description": "Pointer to locked handle data" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_HandleUnlock",
+      "selector": "A02E",
+      "trap_word": "A02E",
+      "manager": "Memory Manager",
+      "description": "Unlocks a handle.",
+      "routine": "UnlockHandle",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Handle to unlock" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Allocated",
+      "selector": "A030",
+      "trap_word": "A030",
+      "manager": "Memory Manager",
+      "description": "Returns size of handle.",
+      "routine": "Allocated",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Handle to query" }
+      ],
+      "returns": { "type": "Size", "description": "Size in bytes" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PtrToHand",
+      "selector": "A021",
+      "trap_word": "A021",
+      "manager": "Memory Manager",
+      "description": "Copies pointer to handle.",
+      "routine": "PtrToHand",
+      "parameters": [
+        { "name": "srcPtr", "type": "Ptr", "description": "Source pointer" },
+        { "name": "dstH", "type": "Handle", "description": "Destination handle" },
+        { "name": "size", "type": "Size", "description": "Size to copy" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_HandToHand",
+      "selector": "A022",
+      "trap_word": "A022",
+      "manager": "Memory Manager",
+      "description": "Copies handle to new handle.",
+      "routine": "HandToHand",
+      "parameters": [
+        { "name": "srcH", "type": "Handle", "description": "Source handle" }
+      ],
+      "returns": { "type": "Handle", "description": "New handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InitGraf",
+      "selector": "A862",
+      "trap_word": "A862",
+      "manager": "QuickDraw",
+      "description": "Initializes the GrafPort.",
+      "routine": "InitGraf",
+      "parameters": [
+        { "name": "thePort", "type": "GrafPtr", "description": "Port to initialize" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_OpenPort",
+      "selector": "A863",
+      "trap_word": "A863",
+      "manager": "QuickDraw",
+      "description": "Opens a GrafPort.",
+      "routine": "OpenPort",
+      "parameters": [
+        { "name": "thePort", "type": "GrafPtr", "description": "Port to open" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ClosePort",
+      "selector": "A864",
+      "trap_word": "A864",
+      "manager": "QuickDraw",
+      "description": "Closes a GrafPort.",
+      "routine": "ClosePort",
+      "parameters": [
+        { "name": "thePort", "type": "GrafPtr", "description": "Port to close" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetPort",
+      "selector": "A873",
+      "trap_word": "A873",
+      "manager": "QuickDraw",
+      "description": "Sets the current port.",
+      "routine": "SetPort",
+      "parameters": [
+        { "name": "thePort", "type": "GrafPtr", "description": "Port to set" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetPort",
+      "selector": "A874",
+      "trap_word": "A874",
+      "manager": "QuickDraw",
+      "description": "Gets the current port.",
+      "routine": "GetPort",
+      "parameters": [],
+      "returns": { "type": "GrafPtr", "description": "Current port" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ForeColor",
+      "selector": "A864",
+      "trap_word": "A864",
+      "manager": "QuickDraw",
+      "description": "Sets foreground color.",
+      "routine": "ForeColor",
+      "parameters": [
+        { "name": "color", "type": "LongInt", "description": "Color value" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_BackColor",
+      "selector": "A865",
+      "trap_word": "A865",
+      "manager": "QuickDraw",
+      "description": "Sets background color.",
+      "routine": "BackColor",
+      "parameters": [
+        { "name": "color", "type": "LongInt", "description": "Color value" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_MoveTo",
+      "selector": "A901",
+      "trap_word": "A901",
+      "manager": "QuickDraw",
+      "description": "Moves to point.",
+      "routine": "MoveTo",
+      "parameters": [
+        { "name": "h", "type": "Integer", "description": "Horizontal coordinate" },
+        { "name": "v", "type": "Integer", "description": "Vertical coordinate" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_MoveTo",
+      "selector": "A901",
+      "trap_word": "A901",
+      "manager": "QuickDraw",
+      "description": "Moves to point (alias for MoveTo).",
+      "routine": "Move",
+      "parameters": [
+        { "name": "h", "type": "Integer", "description": "Horizontal coordinate" },
+        { "name": "v", "type": "Integer", "description": "Vertical coordinate" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_LineTo",
+      "selector": "A902",
+      "trap_word": "A902",
+      "manager": "QuickDraw",
+      "description": "Draws line to point.",
+      "routine": "LineTo",
+      "parameters": [
+        { "name": "h", "type": "Integer", "description": "Horizontal coordinate" },
+        { "name": "v", "type": "Integer", "description": "Vertical coordinate" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_LineTo",
+      "selector": "A902",
+      "trap_word": "A902",
+      "manager": "QuickDraw",
+      "description": "Draws line to point (alias for LineTo).",
+      "routine": "Line",
+      "parameters": [
+        { "name": "h", "type": "Integer", "description": "Horizontal coordinate" },
+        { "name": "v", "type": "Integer", "description": "Vertical coordinate" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_TextFont",
+      "selector": "A906",
+      "trap_word": "A906",
+      "manager": "QuickDraw Text",
+      "description": "Sets the text font.",
+      "routine": "TextFont",
+      "parameters": [
+        { "name": "font", "type": "Integer", "description": "Font number" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_TextSize",
+      "selector": "A907",
+      "trap_word": "A907",
+      "manager": "QuickDraw Text",
+      "description": "Sets the text size.",
+      "routine": "TextSize",
+      "parameters": [
+        { "name": "size", "type": "Integer", "description": "Font size in points" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_TextMode",
+      "selector": "A908",
+      "trap_word": "A908",
+      "manager": "QuickDraw Text",
+      "description": "Sets the text mode.",
+      "routine": "TextMode",
+      "parameters": [
+        { "name": "mode", "type": "Integer", "description": "Text mode" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DrawChar",
+      "selector": "A909",
+      "trap_word": "A909",
+      "manager": "QuickDraw Text",
+      "description": "Draws a character.",
+      "routine": "DrawChar",
+      "parameters": [
+        { "name": "ch", "type": "Char", "description": "Character to draw" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DrawString",
+      "selector": "A90A",
+      "trap_word": "A90A",
+      "manager": "QuickDraw Text",
+      "description": "Draws a string.",
+      "routine": "DrawString",
+      "parameters": [
+        { "name": "s", "type": "StringPtr", "description": "String to draw" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DrawText",
+      "selector": "A90B",
+      "trap_word": "A90B",
+      "manager": "QuickDraw Text",
+      "description": "Draws text from buffer.",
+      "routine": "DrawText",
+      "parameters": [
+        { "name": "textBuf", "type": "Ptr", "description": "Text buffer" },
+        { "name": "count", "type": "Integer", "description": "Number of characters" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_CharWidth",
+      "selector": "A90C",
+      "trap_word": "A90C",
+      "manager": "QuickDraw Text",
+      "description": "Gets character width.",
+      "routine": "CharWidth",
+      "parameters": [
+        { "name": "ch", "type": "Char", "description": "Character" }
+      ],
+      "returns": { "type": "Integer", "description": "Character width" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_StringWidth",
+      "selector": "A90D",
+      "trap_word": "A90D",
+      "manager": "QuickDraw Text",
+      "description": "Gets string width.",
+      "routine": "StringWidth",
+      "parameters": [
+        { "name": "s", "type": "StringPtr", "description": "String" }
+      ],
+      "returns": { "type": "Integer", "description": "String width" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_TextWidth",
+      "selector": "A90D",
+      "trap_word": "A90D",
+      "manager": "QuickDraw Text",
+      "description": "Gets text width (alias for StringWidth).",
+      "routine": "TextWidth",
+      "parameters": [
+        { "name": "textBuf", "type": "Ptr", "description": "Text buffer" },
+        { "name": "count", "type": "Integer", "description": "Number of characters" }
+      ],
+      "returns": { "type": "Integer", "description": "Text width" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetRect",
+      "selector": "A91B",
+      "trap_word": "A91B",
+      "manager": "QuickDraw",
+      "description": "Sets a rectangle.",
+      "routine": "SetRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to set" },
+        { "name": "left", "type": "Integer", "description": "Left edge" },
+        { "name": "top", "type": "Integer", "description": "Top edge" },
+        { "name": "right", "type": "Integer", "description": "Right edge" },
+        { "name": "bottom", "type": "Integer", "description": "Bottom edge" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_OffsetRect",
+      "selector": "A921",
+      "trap_word": "A921",
+      "manager": "QuickDraw",
+      "description": "Offsets a rectangle.",
+      "routine": "OffsetRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to offset" },
+        { "name": "dh", "type": "Integer", "description": "Horizontal offset" },
+        { "name": "dv", "type": "Integer", "description": "Vertical offset" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InsetRect",
+      "selector": "A922",
+      "trap_word": "A922",
+      "manager": "QuickDraw",
+      "description": "Insets a rectangle.",
+      "routine": "InsetRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to inset" },
+        { "name": "dh", "type": "Integer", "description": "Horizontal inset" },
+        { "name": "dv", "type": "Integer", "description": "Vertical inset" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FrameRect",
+      "selector": "A923",
+      "trap_word": "A923",
+      "manager": "QuickDraw",
+      "description": "Frames a rectangle.",
+      "routine": "FrameRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to frame" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PaintRect",
+      "selector": "A924",
+      "trap_word": "A924",
+      "manager": "QuickDraw",
+      "description": "Paints a rectangle.",
+      "routine": "PaintRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to paint" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_EraseRect",
+      "selector": "A925",
+      "trap_word": "A925",
+      "manager": "QuickDraw",
+      "description": "Erases a rectangle.",
+      "routine": "EraseRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to erase" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InvertRect",
+      "selector": "A926",
+      "trap_word": "A926",
+      "manager": "QuickDraw",
+      "description": "Inverts a rectangle.",
+      "routine": "InvertRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to invert" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FillRect",
+      "selector": "A927",
+      "trap_word": "A927",
+      "manager": "QuickDraw",
+      "description": "Fills a rectangle.",
+      "routine": "FillRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Rectangle to fill" },
+        { "name": "pat", "type": "PatternPtr", "description": "Fill pattern" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FrameOval",
+      "selector": "A928",
+      "trap_word": "A928",
+      "manager": "QuickDraw",
+      "description": "Frames an oval.",
+      "routine": "FrameOval",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Bounding rectangle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PaintOval",
+      "selector": "A929",
+      "trap_word": "A929",
+      "manager": "QuickDraw",
+      "description": "Paints an oval.",
+      "routine": "PaintOval",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Bounding rectangle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_EraseOval",
+      "selector": "A92A",
+      "trap_word": "A92A",
+      "manager": "QuickDraw",
+      "description": "Erases an oval.",
+      "routine": "EraseOval",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Bounding rectangle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InvertOval",
+      "selector": "A92B",
+      "trap_word": "A92B",
+      "manager": "QuickDraw",
+      "description": "Inverts an oval.",
+      "routine": "InvertOval",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Bounding rectangle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FillOval",
+      "selector": "A92C",
+      "trap_word": "A92C",
+      "manager": "QuickDraw",
+      "description": "Fills an oval.",
+      "routine": "FillOval",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Bounding rectangle" },
+        { "name": "pat", "type": "PatternPtr", "description": "Fill pattern" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FrameRgn",
+      "selector": "A92D",
+      "trap_word": "A92D",
+      "manager": "QuickDraw",
+      "description": "Frames a region.",
+      "routine": "FrameRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to frame" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PaintRgn",
+      "selector": "A92E",
+      "trap_word": "A92E",
+      "manager": "QuickDraw",
+      "description": "Paints a region.",
+      "routine": "PaintRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to paint" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_EraseRgn",
+      "selector": "A92F",
+      "trap_word": "A92F",
+      "manager": "QuickDraw",
+      "description": "Erases a region.",
+      "routine": "EraseRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to erase" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InvertRgn",
+      "selector": "A930",
+      "trap_word": "A930",
+      "manager": "QuickDraw",
+      "description": "Inverts a region.",
+      "routine": "InvertRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to invert" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FillRgn",
+      "selector": "A931",
+      "trap_word": "A931",
+      "manager": "QuickDraw",
+      "description": "Fills a region.",
+      "routine": "FillRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to fill" },
+        { "name": "pat", "type": "PatternPtr", "description": "Fill pattern" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetClip",
+      "selector": "A932",
+      "trap_word": "A932",
+      "manager": "QuickDraw",
+      "description": "Sets the clip region.",
+      "routine": "SetClip",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Clip region" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetClip",
+      "selector": "A933",
+      "trap_word": "A933",
+      "manager": "QuickDraw",
+      "description": "Gets the clip region.",
+      "routine": "GetClip",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to receive clip" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ClipRect",
+      "selector": "A934",
+      "trap_word": "A934",
+      "manager": "QuickDraw",
+      "description": "Clips to rectangle.",
+      "routine": "ClipRect",
+      "parameters": [
+        { "name": "r", "type": "RectPtr", "description": "Clip rectangle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_NewRgn",
+      "selector": "A935",
+      "trap_word": "A935",
+      "manager": "QuickDraw",
+      "description": "Creates a new region.",
+      "routine": "NewRgn",
+      "parameters": [],
+      "returns": { "type": "RgnPtr", "description": "New region" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DisposeRgn",
+      "selector": "A936",
+      "trap_word": "A936",
+      "manager": "QuickDraw",
+      "description": "Disposes a region.",
+      "routine": "DisposeRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to dispose" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_OpenRgn",
+      "selector": "A937",
+      "trap_word": "A937",
+      "manager": "QuickDraw",
+      "description": "Opens a region.",
+      "routine": "OpenRgn",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_CloseRgn",
+      "selector": "A938",
+      "trap_word": "A938",
+      "manager": "QuickDraw",
+      "description": "Closes a region.",
+      "routine": "CloseRgn",
+      "parameters": [
+        { "name": "rgn", "type": "RgnPtr", "description": "Region to close" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_FrameLine",
+      "selector": "A939",
+      "trap_word": "A939",
+      "manager": "QuickDraw",
+      "description": "Frames a line.",
+      "routine": "FrameLine",
+      "parameters": [
+        { "name": "dl", "type": "Integer", "description": "Line thickness" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InitWindows",
+      "selector": "A912",
+      "trap_word": "A912",
+      "manager": "Window Manager",
+      "description": "Initializes the Window Manager.",
+      "routine": "InitWindows",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_NewWindow",
+      "selector": "A913",
+      "trap_word": "A913",
+      "manager": "Window Manager",
+      "description": "Creates a new window.",
+      "routine": "NewWindow",
+      "parameters": [
+        { "name": "wStorage", "type": "Ptr", "description": "Window storage" },
+        { "name": "boundsRect", "type": "RectPtr", "description": "Window bounds" },
+        { "name": "title", "type": "StringPtr", "description": "Window title" },
+        { "name": "visible", "type": "Boolean", "description": "Visibility flag" },
+        { "name": "procID", "type": "Integer", "description": "Window definition ID" },
+        { "name": "goAwayFlag", "type": "Boolean", "description": "Go away flag" },
+        { "name": "refCon", "type": "LongInt", "description": "Reference constant" }
+      ],
+      "returns": { "type": "WindowPtr", "description": "New window pointer" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetNewWindow",
+      "selector": "A914",
+      "trap_word": "A914",
+      "manager": "Window Manager",
+      "description": "Creates window from resource.",
+      "routine": "GetNewWindow",
+      "parameters": [
+        { "name": "wID", "type": "Integer", "description": "Window resource ID" },
+        { "name": "wStorage", "type": "Ptr", "description": "Window storage" },
+        { "name": "behind", "type": "WindowPtr", "description": "Behind window" }
+      ],
+      "returns": { "type": "WindowPtr", "description": "New window pointer" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DisposeWindow",
+      "selector": "A915",
+      "trap_word": "A915",
+      "manager": "Window Manager",
+      "description": "Disposes a window.",
+      "routine": "DisposeWindow",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to dispose" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ShowWindow",
+      "selector": "A916",
+      "trap_word": "A916",
+      "manager": "Window Manager",
+      "description": "Shows a window.",
+      "routine": "ShowWindow",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to show" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_HideWindow",
+      "selector": "A917",
+      "trap_word": "A917",
+      "manager": "Window Manager",
+      "description": "Hides a window.",
+      "routine": "HideWindow",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to hide" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SelectWindow",
+      "selector": "A918",
+      "trap_word": "A918",
+      "manager": "Window Manager",
+      "description": "Selects a window.",
+      "routine": "SelectWindow",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to select" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_BringToFront",
+      "selector": "A919",
+      "trap_word": "A919",
+      "manager": "Window Manager",
+      "description": "Brings window to front.",
+      "routine": "BringToFront",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to bring front" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SendBehind",
+      "selector": "A91A",
+      "trap_word": "A91A",
+      "manager": "Window Manager",
+      "description": "Sends window behind.",
+      "routine": "SendBehind",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to send behind" },
+        { "name": "behindWindow", "type": "WindowPtr", "description": "Window behind which to place" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_BeginUpdate",
+      "selector": "A941",
+      "trap_word": "A941",
+      "manager": "Window Manager",
+      "description": "Begins window update.",
+      "routine": "BeginUpdate",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window to update" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_EndUpdate",
+      "selector": "A942",
+      "trap_word": "A942",
+      "manager": "Window Manager",
+      "description": "Ends window update.",
+      "routine": "EndUpdate",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window that finished updating" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetWTitle",
+      "selector": "A943",
+      "trap_word": "A943",
+      "manager": "Window Manager",
+      "description": "Sets window title.",
+      "routine": "SetWTitle",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window" },
+        { "name": "title", "type": "StringPtr", "description": "New title" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetWTitle",
+      "selector": "A944",
+      "trap_word": "A944",
+      "manager": "Window Manager",
+      "description": "Gets window title.",
+      "routine": "GetWTitle",
+      "parameters": [
+        { "name": "theWindow", "type": "WindowPtr", "description": "Window" },
+        { "name": "title", "type": "StringPtr", "description": "Title buffer" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InitMenus",
+      "selector": "A930",
+      "trap_word": "A930",
+      "manager": "Menu Manager",
+      "description": "Initializes the Menu Manager.",
+      "routine": "InitMenus",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_NewMenu",
+      "selector": "A931",
+      "trap_word": "A931",
+      "manager": "Menu Manager",
+      "description": "Creates a new menu.",
+      "routine": "NewMenu",
+      "parameters": [
+        { "name": "menuID", "type": "Integer", "description": "Menu ID" },
+        { "name": "menuData", "type": "StringPtr", "description": "Menu data" }
+      ],
+      "returns": { "type": "MenuHandle", "description": "Menu handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetNewMenu",
+      "selector": "A932",
+      "trap_word": "A932",
+      "manager": "Menu Manager",
+      "description": "Creates menu from resource.",
+      "routine": "GetNewMenu",
+      "parameters": [
+        { "name": "menuID", "type": "Integer", "description": "Menu resource ID" }
+      ],
+      "returns": { "type": "MenuHandle", "description": "Menu handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DisposeMenu",
+      "selector": "A933",
+      "trap_word": "A933",
+      "manager": "Menu Manager",
+      "description": "Disposes a menu.",
+      "routine": "DisposeMenu",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu to dispose" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InsertMenu",
+      "selector": "A934",
+      "trap_word": "A934",
+      "manager": "Menu Manager",
+      "description": "Inserts menu.",
+      "routine": "InsertMenu",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu to insert" },
+        { "name": "afterID", "type": "Integer", "description": "Insert after this ID" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DeleteMenu",
+      "selector": "A935",
+      "trap_word": "A935",
+      "manager": "Menu Manager",
+      "description": "Deletes menu.",
+      "routine": "DeleteMenu",
+      "parameters": [
+        { "name": "menuID", "type": "Integer", "description": "Menu ID to delete" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_AppendMenu",
+      "selector": "A936",
+      "trap_word": "A936",
+      "manager": "Menu Manager",
+      "description": "Appends to menu.",
+      "routine": "AppendMenu",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu handle" },
+        { "name": "data", "type": "StringPtr", "description": "Menu item data" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InsertMenuItem",
+      "selector": "A937",
+      "trap_word": "A937",
+      "manager": "Menu Manager",
+      "description": "Inserts menu item.",
+      "routine": "InsertMenuItem",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu handle" },
+        { "name": "itemStr", "type": "StringPtr", "description": "Item string" },
+        { "name": "afterID", "type": "Integer", "description": "Insert after this ID" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DeleteMenuItem",
+      "selector": "A938",
+      "trap_word": "A938",
+      "manager": "Menu Manager",
+      "description": "Deletes menu item.",
+      "routine": "DeleteMenuItem",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu handle" },
+        { "name": "item", "type": "Integer", "description": "Item number" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DrawMenuBar",
+      "selector": "A939",
+      "trap_word": "A939",
+      "manager": "Menu Manager",
+      "description": "Draws the menu bar.",
+      "routine": "DrawMenuBar",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetMHandle",
+      "selector": "A93A",
+      "trap_word": "A93A",
+      "manager": "Menu Manager",
+      "description": "Gets menu handle.",
+      "routine": "GetMHandle",
+      "parameters": [
+        { "name": "menuID", "type": "Integer", "description": "Menu ID" }
+      ],
+      "returns": { "type": "MenuHandle", "description": "Menu handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetMenuBar",
+      "selector": "A93B",
+      "trap_word": "A93B",
+      "manager": "Menu Manager",
+      "description": "Sets the menu bar.",
+      "routine": "SetMenuBar",
+      "parameters": [
+        { "name": "menu", "type": "MenuHandle", "description": "Menu to set" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetMenuBar",
+      "selector": "A93C",
+      "trap_word": "A93C",
+      "manager": "Menu Manager",
+      "description": "Gets the menu bar.",
+      "routine": "GetMenuBar",
+      "parameters": [],
+      "returns": { "type": "MenuHandle", "description": "Menu bar handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ HiliteMenu",
+      "selector": "A93D",
+      "trap_word": "A93D",
+      "manager": "Menu Manager",
+      "description": "Highlights a menu.",
+      "routine": "HiliteMenu",
+      "parameters": [
+        { "name": "menuID", "type": "Integer", "description": "Menu ID" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InitResources",
+      "selector": "A810",
+      "trap_word": "A810",
+      "manager": "Resource Manager",
+      "description": "Initializes the Resource Manager.",
+      "routine": "InitResources",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_CountResources",
+      "selector": "A811",
+      "trap_word": "A811",
+      "manager": "Resource Manager",
+      "description": "Counts resources of type.",
+      "routine": "CountResources",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" }
+      ],
+      "returns": { "type": "Integer", "description": "Count of resources" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetIndResource",
+      "selector": "A812",
+      "trap_word": "A812",
+      "manager": "Resource Manager",
+      "description": "Gets indexed resource.",
+      "routine": "GetIndResource",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "index", "type": "Integer", "description": "Resource index" }
+      ],
+      "returns": { "type": "Handle", "description": "Resource handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetResource",
+      "selector": "A813",
+      "trap_word": "A813",
+      "manager": "Resource Manager",
+      "description": "Gets a resource.",
+      "routine": "GetResource",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "theID", "type": "Integer", "description": "Resource ID" }
+      ],
+      "returns": { "type": "Handle", "description": "Resource handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetNamedResource",
+      "selector": "A814",
+      "trap_word": "A814",
+      "manager": "Resource Manager",
+      "description": "Gets resource by name.",
+      "routine": "GetNamedResource",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "name", "type": "StringPtr", "description": "Resource name" }
+      ],
+      "returns": { "type": "Handle", "description": "Resource handle" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_LoadResource",
+      "selector": "A815",
+      "trap_word": "A815",
+      "manager": "Resource Manager",
+      "description": "Loads a resource.",
+      "routine": "LoadResource",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "theID", "type": "Integer", "description": "Resource ID" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_ReleaseResource",
+      "selector": "A816",
+      "trap_word": "A816",
+      "manager": "Resource Manager",
+      "description": "Releases a resource.",
+      "routine": "ReleaseResource",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Resource handle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_DetachResource",
+      "selector": "A817",
+      "trap_word": "A817",
+      "manager": "Resource Manager",
+      "description": "Detaches a resource.",
+      "routine": "DetachResource",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Resource handle" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetResInfo",
+      "selector": "A818",
+      "trap_word": "A818",
+      "manager": "Resource Manager",
+      "description": "Gets resource info.",
+      "routine": "GetResInfo",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Resource handle" },
+        { "name": "theID", "type": "Integer", "description": "Resource ID" },
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "name", "type": "StringPtr", "description": "Resource name" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetResInfo",
+      "selector": "A819",
+      "trap_word": "A819",
+      "manager": "Resource Manager",
+      "description": "Sets resource info.",
+      "routine": "SetResInfo",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Resource handle" },
+        { "name": "theID", "type": "Integer", "description": "New resource ID" },
+        { "name": "theType", "type": "ResType", "description": "New resource type" },
+        { "name": "name", "type": "StringPtr", "description": "New resource name" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_AddResource",
+      "selector": "A81A",
+      "trap_word": "A81A",
+      "manager": "Resource Manager",
+      "description": "Adds a resource.",
+      "routine": "AddResource",
+      "parameters": [
+        { "name": "handle", "type": "Handle", "description": "Resource handle" },
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "theID", "type": "Integer", "description": "Resource ID" },
+        { "name": "name", "type": "StringPtr", "description": "Resource name" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_RsrcMapEntry",
+      "selector": "A81B",
+      "trap_word": "A81B",
+      "manager": "Resource Manager",
+      "description": "Gets resource map entry.",
+      "routine": "RsrcMapEntry",
+      "parameters": [
+        { "name": "theType", "type": "ResType", "description": "Resource type" },
+        { "name": "index", "type": "Integer", "description": "Resource index" }
+      ],
+      "returns": { "type": "Integer", "description": "Resource ID" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_InitPack",
+      "selector": "A9C0",
+      "trap_word": "A9C0",
+      "manager": "Package Manager",
+      "description": "Initializes Package Manager.",
+      "routine": "InitPack",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack0",
+      "selector": "A9C1",
+      "trap_word": "A9C1",
+      "manager": "Package Manager",
+      "description": "Package 0 trap.",
+      "routine": "Pack0",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack1",
+      "selector": "A9C2",
+      "trap_word": "A9C2",
+      "manager": "Package Manager",
+      "description": "Package 1 trap.",
+      "routine": "Pack1",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack2",
+      "selector": "A9C3",
+      "trap_word": "A9C3",
+      "manager": "Package Manager",
+      "description": "Package 2 trap.",
+      "routine": "Pack2",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack3",
+      "selector": "A9C4",
+      "trap_word": "A9C4",
+      "manager": "Package Manager",
+      "description": "Package 3 trap.",
+      "routine": "Pack3",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack4",
+      "selector": "A9C5",
+      "trap_word": "A9C5",
+      "manager": "Package Manager",
+      "description": "Package 4 trap.",
+      "routine": "Pack4",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Pack5",
+      "selector": "A9C6",
+      "trap_word": "A9C6",
+      "manager": "Package Manager",
+      "description": "Package 5 trap.",
+      "routine": "Pack5",
+      "parameters": [],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SystemEvent",
+      "selector": "A020",
+      "trap_word": "A020",
+      "manager": "Event Manager",
+      "description": "Gets a system event.",
+      "routine": "SystemEvent",
+      "parameters": [
+        { "name": "theEvent", "type": "EventPtr", "description": "Event record" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetNextEvent",
+      "selector": "A021",
+      "trap_word": "A021",
+      "manager": "Event Manager",
+      "description": "Gets next event.",
+      "routine": "GetNextEvent",
+      "parameters": [
+        { "name": "mask", "type": "Integer", "description": "Event mask" },
+        { "name": "theEvent", "type": "EventPtr", "description": "Event record" }
+      ],
+      "returns": { "type": "Boolean", "description": "True if event available" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_EventAvail",
+      "selector": "A022",
+      "trap_word": "A022",
+      "manager": "Event Manager",
+      "description": "Checks if event available.",
+      "routine": "EventAvail",
+      "parameters": [
+        { "name": "mask", "type": "Integer", "description": "Event mask" },
+        { "name": "theEvent", "type": "EventPtr", "description": "Event record" }
+      ],
+      "returns": { "type": "Boolean", "description": "True if event pending" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PostEvent",
+      "selector": "A023",
+      "trap_word": "A023",
+      "manager": "Event Manager",
+      "description": "Posts an event.",
+      "routine": "PostEvent",
+      "parameters": [
+        { "name": "what", "type": "Integer", "description": "Event type" },
+        { "name": "message", "type": "LongInt", "description": "Event message" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_OSEventAvail",
+      "selector": "A024",
+      "trap_word": "A024",
+      "manager": "Event Manager",
+      "description": "Checks OS event available.",
+      "routine": "OSEventAvail",
+      "parameters": [
+        { "name": "mask", "type": "Integer", "description": "Event mask" },
+        { "name": "theEvent", "type": "EventPtr", "description": "Event record" }
+      ],
+      "returns": { "type": "Boolean", "description": "True if OS event pending" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetMouse",
+      "selector": "A950",
+      "trap_word": "A950",
+      "manager": "Event Manager",
+      "description": "Gets mouse location.",
+      "routine": "GetMouse",
+      "parameters": [
+        { "name": "where", "type": "PointPtr", "description": "Mouse location" }
+      ],
+      "returns": { "type": "void", "description": "No return value" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Button",
+      "selector": "A951",
+      "trap_word": "A951",
+      "manager": "Event Manager",
+      "description": "Checks button state.",
+      "routine": "Button",
+      "parameters": [],
+      "returns": { "type": "Boolean", "description": "True if button down" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_StillDown",
+      "selector": "A952",
+      "trap_word": "A952",
+      "manager": "Event Manager",
+      "description": "Checks if button still down.",
+      "routine": "StillDown",
+      "parameters": [],
+      "returns": { "type": "Boolean", "description": "True if button down" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_WaitMouseUp",
+      "selector": "A953",
+      "trap_word": "A953",
+      "manager": "Event Manager",
+      "description": "Waits for mouse up.",
+      "routine": "WaitMouseUp",
+      "parameters": [],
+      "returns": { "type": "Boolean", "description": "True when button up" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_Ticks",
+      "selector": "A954",
+      "trap_word": "A954",
+      "manager": "Event Manager",
+      "description": "Gets tick count.",
+      "routine": "Ticks",
+      "parameters": [],
+      "returns": { "type": "LongInt", "description": "Tick count" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_KeyTranslate",
+      "selector": "A955",
+      "trap_word": "A955",
+      "manager": "Event Manager",
+      "description": "Translates key code.",
+      "routine": "KeyTranslate",
+      "parameters": [
+        { "name": "key", "type": "Integer", "description": "Key code" },
+        { "name": "state", "type": "LongInt", "description": "Modifier state" }
+      ],
+      "returns": { "type": "LongInt", "description": "Translated key" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetKey",
+      "selector": "A956",
+      "trap_word": "A956",
+      "manager": "Event Manager",
+      "description": "Gets key from event.",
+      "routine": "GetKey",
+      "parameters": [],
+      "returns": { "type": "Char", "description": "Key character" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PBGetFileInfo",
+      "selector": "C008",
+      "trap_word": "A00B",
+      "manager": "File Manager",
+      "description": "Gets file information via param block.",
+      "routine": "GetFileInfo",
+      "parameters": [
+        { "name": "ioNamePtr", "type": "StringPtr", "description": "Pointer to filename" },
+        { "name": "ioVRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PBSetFileInfo",
+      "selector": "C009",
+      "trap_word": "A00C",
+      "manager": "File Manager",
+      "description": "Sets file information via param block.",
+      "routine": "SetFileInfo",
+      "parameters": [
+        { "name": "ioNamePtr", "type": "StringPtr", "description": "Pointer to filename" },
+        { "name": "ioVRefNum", "type": "Integer", "description": "Volume reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_PBGetFCBInfo",
+      "selector": "C010",
+      "trap_word": "A00D",
+      "manager": "File Manager",
+      "description": "Gets FCB information.",
+      "routine": "GetFCBInfo",
+      "parameters": [
+        { "name": "ioRefNum", "type": "Integer", "description": "File reference number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_GetFNum",
+      "selector": "C700",
+      "trap_word": "A00E",
+      "manager": "File Manager",
+      "description": "Gets file number.",
+      "routine": "GetFNum",
+      "parameters": [
+        { "name": "fileName", "type": "StringPtr", "description": "Filename" },
+        { "name": "var", "type": "Integer", "description": "File number result" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    },
+    {
+      "name": "_SetFNum",
+      "selector": "C701",
+      "trap_word": "A00F",
+      "manager": "File Manager",
+      "description": "Sets file number.",
+      "routine": "SetFNum",
+      "parameters": [
+        { "name": "fileName", "type": "StringPtr", "description": "Filename" },
+        { "name": "var", "type": "Integer", "description": "File number" }
+      ],
+      "returns": { "type": "OSErr", "description": "Result code" },
+      "calling_convention": "Pascal",
+      "availability": "System"
+    }
+  ]
+}

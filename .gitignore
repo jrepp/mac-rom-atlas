@@ -11,6 +11,7 @@ build/
 .env
 .env.*
 *.log
+.DS_Store
 
 # Large generated or source binary artifacts
 *.rom
@@ -19,7 +20,21 @@ build/
 *.img
 *.dsk
 *.iso
+*.pdf
+*.PDF
 
 # Generated analysis can be added intentionally once storage policy is defined.
 out/
 tmp/
+data/reference-pdfs/
+data/book-extractions/
+data/roms/**
+!data/roms/
+!data/roms/README.md
+data/sources/**
+!data/sources/
+!data/sources/README.md
+data/disassembly/**
+!data/disassembly/
+!data/disassembly/README.md
+services/mcp-server/data/projects/*/memory-pages/
