@@ -57,6 +57,7 @@ The MCP server treats these files as overlay indexes. Project JSON remains the w
 - Expose project data through MCP and REST APIs.
 - Keep frontend workflows query-driven rather than loading whole ROM-scale state into the browser.
 - Make every annotation traceable to its source: stackimport, source overlay, manual knowledge, structure analysis, or analyst note.
+- Use `docs/stackimport-feature-requests.md` as the contract backlog for native ROM analysis features that should live in stackimport.
 
 ## Validation Flow
 
