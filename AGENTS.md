@@ -72,6 +72,7 @@ Atlas Publication Line
 - When changing MCP server behavior, run `npm run build` in `services/mcp-server`.
 - When changing frontend JavaScript in `public/index.html`, parse the embedded script with Node before finishing.
 - When changing project JSON or map exports, validate JSON parsing and regenerate maps with `node tools/export_atlas_maps.js`.
+- Before committing, run `npm run validate` from the repository root. The committed pre-commit hook runs the same validation when `core.hooksPath` is set to `.githooks`.
 
 ## Reverse Engineering Workflow
 
@@ -108,8 +109,10 @@ Good notes answer:
 Prefer:
 
 - YAML for manifests and small metadata.
-- TSV for maps, regions, functions, xrefs, resources, strings, traps, and labels.
+- TSV for maps, regions, functions, xrefs, resources, strings, traps, labels, and ROM inventory.
 - Markdown with YAML front matter for notes.
+
+The MCP server reads `atlas/maps/<dataset>/roms.tsv`, `functions.tsv`, `pointer-tables.tsv`, `resources.tsv`, `data-regions.tsv`, `strings.tsv`, `traps.tsv`, and `labels.tsv` as overlay nodes. Keep address columns normalized to uppercase hex without `0x`.
 
 Avoid:
 
@@ -130,6 +133,10 @@ node -e 'const fs=require("fs"); const html=fs.readFileSync("services/mcp-server
 
 ```sh
 node tools/export_atlas_maps.js
+```
+
+```sh
+npm run validate
 ```
 
 ```sh

@@ -10,5 +10,8 @@ files:
   - pointer-tables.tsv
   - resources.tsv
   - data-regions.tsv
+  - strings.tsv
+  - traps.tsv
+  - labels.tsv
   - xrefs.tsv
   - notes/

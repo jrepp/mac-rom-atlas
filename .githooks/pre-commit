@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+echo "Running mac-rom-atlas pre-commit validation..."
+node scripts/validate_project_data.js
+npm --prefix services/mcp-server run build

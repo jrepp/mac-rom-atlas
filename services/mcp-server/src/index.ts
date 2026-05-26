@@ -1179,7 +1179,7 @@ function computeCrc32(buffer: Buffer): string {
   for (const byte of buffer) {
     crc = table[(crc ^ byte) & 0xff] ^ (crc >>> 8);
   }
-  return (crc ^ 0xffffffff).toString(16).toUpperCase().padStart(8, "0");
+  return ((crc ^ 0xffffffff) >>> 0).toString(16).toUpperCase().padStart(8, "0");
 }
 
 function computeSha256(buffer: Buffer): string {
@@ -2325,6 +2325,16 @@ interface SourceMatch {
 const disassemblyIndexCache = new Map<string, DisassemblyFileIndex>();
 let sourceIndexCache: { root: string; files: SourceFileIndex[] } | null = null;
 let atlasMapCache: { root: string; mtime_key: string; nodes: ProjectNode[] } | null = null;
+const ATLAS_MAP_NODE_FILES = [
+  "roms.tsv",
+  "functions.tsv",
+  "pointer-tables.tsv",
+  "resources.tsv",
+  "data-regions.tsv",
+  "strings.tsv",
+  "traps.tsv",
+  "labels.tsv"
+];
 
 function disassemblyNodes(project: ReverseProject) {
   return project.nodes
@@ -2530,17 +2540,21 @@ function atlasMapMtimeKey(root: string) {
 }
 
 function atlasMapKindToNodeType(kind: string, file: string, row: Record<string, string>) {
+  if (file === "roms.tsv") return "rom";
   if (file === "functions.tsv") return row.id?.startsWith("function:") ? "function" : "function_candidate";
   if (file === "pointer-tables.tsv") return "pointer_table";
   if (file === "data-regions.tsv") return "data_region";
   if (file === "resources.tsv") return row.kind === "resource_asset" ? "resource_asset" : "resource_marker";
+  if (file === "strings.tsv") return row.kind === "pstring" ? "pstring" : "cstring";
+  if (file === "traps.tsv") return "trap";
+  if (file === "labels.tsv") return "symbol";
   if (kind === "function" || kind === "function_candidate") return kind;
-  if (kind === "pointer_table" || kind === "data_region" || kind === "resource_marker" || kind === "resource_asset" || kind === "rom_disassembly") return kind;
+  if (kind === "pointer_table" || kind === "data_region" || kind === "resource_marker" || kind === "resource_asset" || kind === "rom_disassembly" || kind === "trap" || kind === "pstring" || kind === "cstring") return kind;
   return "atlas_map_region";
 }
 
 function atlasRowNode(dataset: string, file: string, row: Record<string, string>): ProjectNode | null {
-  const address = (row.start || row.address || "").replace(/^0x/iu, "").toUpperCase();
+  const address = (row.start || row.address || row.base_address || "").replace(/^0x/iu, "").toUpperCase();
   if (!address) return null;
   const kind = row.kind || file.replace(/\.tsv$/u, "");
   const id = `atlas:${dataset}:${row.id || `${kind}:${address}`}`;
@@ -2561,7 +2575,7 @@ function atlasRowNode(dataset: string, file: string, row: Record<string, string>
     id,
     type: atlasMapKindToNodeType(kind, file, row),
     address,
-    label: row.name || row.id || `${kind} ${address}`,
+    label: row.name || row.value || row.id || `${kind} ${address}`,
     metadata,
     created_at: now,
     updated_at: now
@@ -2577,7 +2591,7 @@ function atlasMapNodes() {
     for (const dataset of readdirSync(ATLAS_MAPS_DIR).sort()) {
       const dir = join(ATLAS_MAPS_DIR, dataset);
       if (!statSync(dir).isDirectory()) continue;
-      for (const file of ["functions.tsv", "pointer-tables.tsv", "resources.tsv", "data-regions.tsv"]) {
+      for (const file of ATLAS_MAP_NODE_FILES) {
         for (const row of readTsv(join(dir, file))) {
           const node = atlasRowNode(dataset, file, row);
           if (node) nodes.push(node);
@@ -2602,6 +2616,7 @@ function atlasMapQuery(query: Record<string, unknown>) {
     : "";
   const q = typeof query.q === "string" ? query.q.trim().toLowerCase() : "";
   const type = typeof query.type === "string" ? query.type.trim() : "";
+  const file = typeof query.file === "string" ? query.file.trim() : "";
   const dataset = typeof query.dataset === "string" ? query.dataset.trim() : "";
   const limit = Math.max(1, Math.min(5000, Number(query.limit ?? 500) || 500));
   const numericAddress = parseHexAddress(address);
@@ -2610,6 +2625,7 @@ function atlasMapQuery(query: Record<string, unknown>) {
     .filter((node) => {
       if (dataset && node.metadata?.dataset !== dataset) return false;
       if (type && node.type !== type) return false;
+      if (file && node.metadata?.file !== file) return false;
       if (q) {
         const haystack = [
           node.id,
@@ -2617,9 +2633,7 @@ function atlasMapQuery(query: Record<string, unknown>) {
           node.address,
           node.label,
           node.name,
-          node.metadata?.summary,
-          node.metadata?.source,
-          node.metadata?.file
+          ...Object.values(node.metadata ?? {})
         ].filter(Boolean).join(" ").toLowerCase();
         if (!haystack.includes(q)) return false;
       }
@@ -2642,7 +2656,7 @@ function atlasMapQuery(query: Record<string, unknown>) {
 
   return {
     root: relative(ATLAS_ROOT, ATLAS_MAPS_DIR) || ".",
-    filters: { address, q, type, dataset, limit },
+    filters: { address, q, type, file, dataset, limit },
     total: nodes.length,
     returned: Math.min(nodes.length, limit),
     datasets,
@@ -3894,7 +3908,7 @@ const apiRoutes = {
   projectDisassemblyIndex: "GET /api/projects/:id/disassemblies/:disassemblyId/index",
   projectDisassemblyXrefs: "GET /api/projects/:id/disassemblies/:disassemblyId/xrefs/:address",
   projectDisassemblySourceOverlay: "GET /api/projects/:id/disassemblies/:disassemblyId/source-overlay/:address",
-  projectAtlasMaps: "GET /api/projects/:id/atlas-maps?address=",
+  projectAtlasMaps: "GET /api/projects/:id/atlas-maps?address=&type=&file=&dataset=&q=",
   projectEvents: "GET /api/projects/:id/events",
   projectMemoryRead: "GET /api/projects/:id/memory/:address?length=16",
   sections: "GET /api/sections",

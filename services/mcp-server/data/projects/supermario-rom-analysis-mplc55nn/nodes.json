@@ -20717,9 +20717,9 @@
     "metadata": {
       "rom": "rom:1995-08---4-27039-----owerbook-190---190:-638E37DD:2097152",
       "source_path": "data/roms/old-world/2mb/1995-08 - 4D27039C - Powerbook 190 & 190cs.ROM",
-      "output_dir": "/tmp/mcp-pb190-rom-disasm",
-      "disassembly_path": "/tmp/mcp-pb190-rom-disasm/disassembly.s",
-      "analysis_path": "/tmp/mcp-pb190-rom-disasm/analysis.json",
+      "output_dir": "data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823",
+      "disassembly_path": "data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823/disassembly.s",
+      "analysis_path": "data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823/analysis.json",
       "started_at": "2026-05-26T03:31:30.331Z",
       "completed_at": "2026-05-26T03:31:36.256Z",
       "stackimport_bin": "tools/stackimport/build/stackimport",
@@ -20728,10 +20728,10 @@
         "--rom-base",
         "0x40800000",
         "--output",
-        "/tmp/mcp-pb190-rom-disasm",
+        "data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823",
         "data/roms/old-world/2mb/1995-08 - 4D27039C - Powerbook 190 & 190cs.ROM"
       ],
-      "stackimport_stdout": "Analyzing ROM: 1995-08 - 4D27039C - Powerbook 190 & 190cs.ROM (2097152 bytes, base $40800000)\nFound 1 code regions, 33696 strings, 147 pointer tables\nTotal instructions: 378536\nWrote: /tmp/mcp-pb190-rom-disasm/disassembly.s\nWrote: /tmp/mcp-pb190-rom-disasm/analysis.json\nROM analysis complete. Output: /tmp/mcp-pb190-rom-disasm\n",
+      "stackimport_stdout": "Analyzing ROM: 1995-08 - 4D27039C - Powerbook 190 & 190cs.ROM (2097152 bytes, base $40800000)\nFound 1 code regions, 33696 strings, 147 pointer tables\nTotal instructions: 378536\nWrote: data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823/disassembly.s\nWrote: data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823/analysis.json\nROM analysis complete. Output: data/disassembly/supermario-rom-analysis/1995-08---4D27039C---Powerbook-190-190cs.ROM-disassembly-9C71C823\n",
       "stackimport_stderr": "",
       "stackimport_analysis": {
         "filename": "1995-08 - 4D27039C - Powerbook 190 & 190cs.ROM",
