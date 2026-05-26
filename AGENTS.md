@@ -49,6 +49,7 @@ Atlas Publication Line
   services/mcp-server/data/projects/* split JSON
     -> tools/export_atlas_maps.js
     -> atlas/maps/<dataset>/*.tsv + notes/*.md + manifest.yaml
+    -> inventory, source overlays, source gaps, and region maps improve over time
 ```
 
 ## Stable Locations
@@ -109,10 +110,12 @@ Good notes answer:
 Prefer:
 
 - YAML for manifests and small metadata.
-- TSV for maps, regions, functions, xrefs, resources, strings, traps, labels, and ROM inventory.
+- TSV for maps, regions, functions, xrefs, resources, strings, traps, labels, ROM inventory, source overlays, and source gaps.
 - Markdown with YAML front matter for notes.
 
-The MCP server reads `atlas/maps/<dataset>/roms.tsv`, `functions.tsv`, `pointer-tables.tsv`, `resources.tsv`, `data-regions.tsv`, `strings.tsv`, `traps.tsv`, and `labels.tsv` as overlay nodes. Keep address columns normalized to uppercase hex without `0x`.
+The MCP server reads `atlas/maps/<dataset>/roms.tsv`, `inventory.tsv`, `functions.tsv`, `source-overlays.tsv`, `source-gaps.tsv`, `pointer-tables.tsv`, `resources.tsv`, `data-regions.tsv`, `strings.tsv`, `traps.tsv`, and `labels.tsv` as overlay nodes. Keep address columns normalized to uppercase hex without `0x`.
+
+Treat atlas data as a living map of the ROM inventory. Prefer adding or improving map rows when you learn what a region is, how it relates to SuperMario source, or why it may be absent from the available source snapshot.
 
 Avoid:
 

@@ -188,6 +188,27 @@ function parseTsv(file) {
   return { headers, rows };
 }
 
+function manifestFiles(file) {
+  const text = fs.readFileSync(file, "utf8");
+  const files = [];
+  let inFiles = false;
+  for (const line of text.split(/\r?\n/u)) {
+    if (/^files:\s*$/u.test(line)) {
+      inFiles = true;
+      continue;
+    }
+    if (inFiles) {
+      const match = line.match(/^\s*-\s+(.+?)\s*$/u);
+      if (match) {
+        files.push(match[1]);
+        continue;
+      }
+      if (line.trim()) inFiles = false;
+    }
+  }
+  return files;
+}
+
 function validAddress(value) {
   return !value || /^[0-9A-F]{8}$/u.test(value);
 }
@@ -196,8 +217,11 @@ function validateAtlasMaps() {
   const root = path.join(repoRoot, "atlas", "maps");
   const required = {
     "roms.tsv": ["id", "name", "base_address", "path", "size", "crc32", "sha256", "family", "imported_at"],
+    "inventory.tsv": ["id", "base_address", "rom_id", "name", "path", "size", "crc32", "sha256", "disassembly_id", "function_candidates", "pointer_tables", "data_regions", "resource_markers", "resource_assets", "source_overlap_hits", "source_overlap_score", "supermario_match_status", "notes"],
     "regions.tsv": ["id", "start", "end", "kind", "name", "confidence", "source", "summary"],
     "functions.tsv": ["id", "address", "end", "name", "calls", "jumps", "references", "confidence", "source", "evidence"],
+    "source-overlays.tsv": ["id", "address", "rom_id", "target_kind", "target_id", "source_path", "source_symbol", "evidence_kind", "evidence", "confidence", "status"],
+    "source-gaps.tsv": ["id", "address", "rom_id", "target_kind", "target_id", "gap_kind", "evidence", "priority", "status"],
     "pointer-tables.tsv": ["id", "address", "end", "name", "entries", "byte_length", "confidence", "source"],
     "resources.tsv": ["id", "address", "kind", "resource_type", "resource_id", "name", "media_type", "output_file", "confidence", "source"],
     "data-regions.tsv": ["id", "start", "end", "kind", "name", "items", "confidence", "source", "evidence"],
@@ -209,6 +233,19 @@ function validateAtlasMaps() {
   for (const dataset of fs.existsSync(root) ? fs.readdirSync(root).sort() : []) {
     const datasetDir = path.join(root, dataset);
     if (!fs.statSync(datasetDir).isDirectory()) continue;
+    const manifest = path.join(datasetDir, "manifest.yaml");
+    if (!fs.existsSync(manifest)) {
+      fail(`${rel(manifest)} is missing`);
+    } else {
+      const declared = manifestFiles(manifest);
+      for (const file of [...Object.keys(required), "notes/"]) {
+        if (!declared.includes(file)) fail(`${rel(manifest)} does not declare ${file}`);
+      }
+      for (const file of declared) {
+        const target = path.join(datasetDir, file);
+        if (!fs.existsSync(target)) fail(`${rel(manifest)} declares missing file ${file}`);
+      }
+    }
     for (const [file, headers] of Object.entries(required)) {
       const full = path.join(datasetDir, file);
       if (!fs.existsSync(full)) {

@@ -2327,7 +2327,10 @@ let sourceIndexCache: { root: string; files: SourceFileIndex[] } | null = null;
 let atlasMapCache: { root: string; mtime_key: string; nodes: ProjectNode[] } | null = null;
 const ATLAS_MAP_NODE_FILES = [
   "roms.tsv",
+  "inventory.tsv",
   "functions.tsv",
+  "source-overlays.tsv",
+  "source-gaps.tsv",
   "pointer-tables.tsv",
   "resources.tsv",
   "data-regions.tsv",
@@ -2541,7 +2544,10 @@ function atlasMapMtimeKey(root: string) {
 
 function atlasMapKindToNodeType(kind: string, file: string, row: Record<string, string>) {
   if (file === "roms.tsv") return "rom";
+  if (file === "inventory.tsv") return "rom_inventory";
   if (file === "functions.tsv") return row.id?.startsWith("function:") ? "function" : "function_candidate";
+  if (file === "source-overlays.tsv") return "source_overlay";
+  if (file === "source-gaps.tsv") return "source_gap";
   if (file === "pointer-tables.tsv") return "pointer_table";
   if (file === "data-regions.tsv") return "data_region";
   if (file === "resources.tsv") return row.kind === "resource_asset" ? "resource_asset" : "resource_marker";

@@ -84,6 +84,60 @@ function crc32(value) {
   return text.replace(/^0X/u, "").padStart(8, "0");
 }
 
+function disassemblyForRom(romId) {
+  return nodes.find((node) => node.type === "rom_disassembly" && node.metadata?.rom === romId);
+}
+
+function romIdForNode(node) {
+  if (String(node.id).startsWith("function_candidate:")) {
+    return String(node.id).replace(/^function_candidate:/u, "").replace(/:[0-9A-F]{8}$/u, "");
+  }
+  if (node.metadata?.rom) return node.metadata.rom;
+  if (node.metadata?.disassembly) return nodes.find((candidate) => candidate.id === node.metadata.disassembly)?.metadata?.rom || "";
+  return "";
+}
+
+function countNodesForRom(type, romId) {
+  return nodes.filter((node) => node.type === type && (node.id.includes(romId) || node.metadata?.rom === romId)).length;
+}
+
+function sourceOverlapRows() {
+  const note = notes.find((item) => /Candidate ROM evidence/iu.test(item.title || ""));
+  const text = note?.text || "";
+  const rows = [];
+  for (const line of text.split(/\r?\n/u)) {
+    const match = line.match(/^\|\s*(PowerBook 190\/190cs 1995-08|Quadra 660AV\/840AV 1994-09|PowerBook 520\/540 1994-05)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|/iu);
+    if (!match) continue;
+    rows.push({
+      label: match[1],
+      hits: Number(match[2]),
+      score: Number(match[3])
+    });
+  }
+  return rows;
+}
+
+function romOverlap(rom) {
+  const overlaps = sourceOverlapRows();
+  const name = label(rom).toLowerCase();
+  if (name.includes("quadra-900")) return undefined;
+  return overlaps.find((row) => {
+    const labelText = row.label.toLowerCase();
+    if (name.includes("190") && labelText.includes("190")) return true;
+    if ((name.includes("660av") || name.includes("840av")) && labelText.includes("quadra")) return true;
+    if ((name.includes("520") || name.includes("540")) && labelText.includes("520")) return true;
+    return false;
+  });
+}
+
+function sourceMatchStatus(rom) {
+  const overlap = romOverlap(rom);
+  if (!overlap) return "not_scored";
+  if (/190/u.test(label(rom))) return "strongest_string_overlap_not_confirmed";
+  if (/Quadra/u.test(label(rom))) return "disassembled_candidate_partial_overlap";
+  return "candidate_lower_overlap";
+}
+
 const project = readJson("project.json");
 const nodes = readJson("nodes.json");
 const edges = readJson("edges.json");
@@ -103,6 +157,31 @@ writeTsv("roms.tsv", ["id", "name", "base_address", "path", "size", "crc32", "sh
   family: node.metadata?.filename?.machine_family,
   imported_at: node.metadata?.import_timestamp
 })));
+
+writeTsv("inventory.tsv", ["id", "base_address", "rom_id", "name", "path", "size", "crc32", "sha256", "disassembly_id", "function_candidates", "pointer_tables", "data_regions", "resource_markers", "resource_assets", "source_overlap_hits", "source_overlap_score", "supermario_match_status", "notes"], roms.map((rom) => {
+  const disassembly = disassemblyForRom(rom.id);
+  const overlap = romOverlap(rom);
+  return {
+    id: `inventory:${rom.id}`,
+    base_address: rom.address,
+    rom_id: rom.id,
+    name: label(rom),
+    path: rom.metadata?.source_path,
+    size: rom.metadata?.size,
+    crc32: crc32(rom.metadata?.crc32),
+    sha256: rom.metadata?.sha256,
+    disassembly_id: disassembly?.id || "",
+    function_candidates: countNodesForRom("function_candidate", rom.id),
+    pointer_tables: countNodesForRom("pointer_table", rom.id),
+    data_regions: countNodesForRom("data_region", rom.id),
+    resource_markers: countNodesForRom("resource_marker", rom.id),
+    resource_assets: countNodesForRom("resource_asset", rom.id),
+    source_overlap_hits: overlap?.hits ?? "",
+    source_overlap_score: overlap?.score ?? "",
+    supermario_match_status: sourceMatchStatus(rom),
+    notes: "Inventory row summarizes current mapped evidence; raw bytes and full disassembly are external."
+  };
+}));
 
 const regions = sortedByAddress(nodes.filter((node) => ["function_candidate", "pointer_table", "data_region", "resource_marker", "resource_asset", "rom_disassembly"].includes(node.type)));
 writeTsv("regions.tsv", ["id", "start", "end", "kind", "name", "confidence", "source", "summary"], regions.map((node) => ({
@@ -129,6 +208,57 @@ writeTsv("functions.tsv", ["id", "address", "end", "name", "calls", "jumps", "re
   source: source(node),
   evidence: node.metadata?.evidence || node.metadata?.context || node.metadata?.summary
 })));
+
+writeTsv("source-overlays.tsv", ["id", "address", "rom_id", "target_kind", "target_id", "source_path", "source_symbol", "evidence_kind", "evidence", "confidence", "status"], [
+  ...roms.map((rom) => {
+    const overlap = romOverlap(rom);
+    return {
+      id: `source_overlay:${rom.id}:string-overlap`,
+      address: rom.address,
+      rom_id: rom.id,
+      target_kind: "rom",
+      target_id: rom.id,
+      source_path: "data/sources/SuperMarioProj.1994-02-09",
+      source_symbol: "",
+      evidence_kind: "string_overlap",
+      evidence: overlap ? `${overlap.hits} hits; weighted score ${overlap.score}` : "Not yet scored against SuperMario strings",
+      confidence: overlap ? "medium" : "unknown",
+      status: sourceMatchStatus(rom)
+    };
+  }),
+  ...functions
+    .filter((node) => node.type === "function" && node.metadata?.source === "agent_note")
+    .map((node) => ({
+      id: `source_overlay:${node.id}`,
+      address: node.address,
+      rom_id: "",
+      target_kind: "function",
+      target_id: node.id,
+      source_path: "data/sources/SuperMarioProj.1994-02-09",
+      source_symbol: node.name || "",
+      evidence_kind: "manual_function_name",
+      evidence: node.metadata?.evidence || "",
+      confidence: confidence(node),
+      status: "manual_overlay_hypothesis"
+    }))
+]);
+
+const sourceGapRows = functions
+  .filter((node) => node.type === "function_candidate" && source(node) !== "agent_note")
+  .sort((a, b) => Number(b.metadata?.calls ?? b.metadata?.references ?? 0) - Number(a.metadata?.calls ?? a.metadata?.references ?? 0))
+  .slice(0, 80)
+  .map((node) => ({
+    id: `source_gap:${node.id}`,
+    address: node.address,
+    rom_id: romIdForNode(node),
+    target_kind: "function_candidate",
+    target_id: node.id,
+    gap_kind: "unmapped_function_candidate",
+    evidence: `${node.metadata?.calls ?? 0} calls; ${node.metadata?.references ?? node.metadata?.refs?.length ?? 0} references; no confirmed SuperMario source overlay`,
+    priority: Number(node.metadata?.calls ?? node.metadata?.references ?? 0) >= 40 ? "high" : "medium",
+    status: "needs_source_correlation"
+  }));
+writeTsv("source-gaps.tsv", ["id", "address", "rom_id", "target_kind", "target_id", "gap_kind", "evidence", "priority", "status"], sourceGapRows);
 
 const tables = sortedByAddress(nodes.filter((node) => node.type === "pointer_table"));
 writeTsv("pointer-tables.tsv", ["id", "address", "end", "name", "entries", "byte_length", "confidence", "source"], tables.map((node) => ({
@@ -244,8 +374,11 @@ const manifest = [
   "format_version: 1",
   "files:",
   "  - roms.tsv",
+  "  - inventory.tsv",
   "  - regions.tsv",
   "  - functions.tsv",
+  "  - source-overlays.tsv",
+  "  - source-gaps.tsv",
   "  - pointer-tables.tsv",
   "  - resources.tsv",
   "  - data-regions.tsv",

@@ -43,7 +43,10 @@ Public, diffable atlas data lives under `atlas/maps/<dataset>/`:
 
 - `manifest.yaml` identifies the dataset and generated files.
 - `roms.tsv` lists ROM identities, stable paths, hashes, and base addresses.
+- `inventory.tsv` summarizes the mapped inventory for each ROM and the current SuperMario match status.
 - `regions.tsv` is a broad map of code, table, data, resource, and disassembly regions.
+- `source-overlays.tsv` records correlation evidence between ROM addresses or ROM identities and SuperMario source paths/symbols.
+- `source-gaps.tsv` records high-priority ROM regions that still have no confirmed SuperMario source coverage.
 - `functions.tsv`, `pointer-tables.tsv`, `data-regions.tsv`, `resources.tsv`, `labels.tsv`, `strings.tsv`, `traps.tsv`, and `xrefs.tsv` provide workflow-specific indexes.
 - `notes/*.md` stores analyst-authored context with YAML front matter.
 

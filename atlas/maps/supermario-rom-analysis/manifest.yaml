@@ -5,8 +5,11 @@ updated_at: 2026-05-26T09:07:03.838Z
 format_version: 1
 files:
   - roms.tsv
+  - inventory.tsv
   - regions.tsv
   - functions.tsv
+  - source-overlays.tsv
+  - source-gaps.tsv
   - pointer-tables.tsv
   - resources.tsv
   - data-regions.tsv
